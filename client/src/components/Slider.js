@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import ArrowLeftOutlinedIcon from "@mui/icons-material/ArrowLeftOutlined";
 import ArrowRightOutlinedIcon from "@mui/icons-material/ArrowRightOutlined";
+import { useState } from "react";
+import {sliderItems} from "../data"
 
 //check out props for styled components that allow you to separate different arrows. direction is a prop, left or right.
 //issues: figure out why the left one cannot be moved 10px to the left. 
@@ -16,6 +18,8 @@ const Container = styled.div`
 const Wrapper = styled.div`
     height: 100%;
     display: flex;
+    transition: all 1.5s ease;
+    transform: translateX(${props=>props.slideIndex * -100}vw)
 `;
 
 const Slide = styled.div`
@@ -23,6 +27,7 @@ const Slide = styled.div`
     align-items: center;
     width: 100vw;
     height: 100vh;
+    background-color: #${props=>props.bg};
 `;
 const ImageContainer = styled.div`
     height: 100%;
@@ -57,6 +62,7 @@ const Button = styled.button`
 
 const Arrow = styled.div`
     cursor: pointer;
+    z-index: 2;
     opacity: 0.75;
     width: 50px;
     height: 50px;
@@ -75,30 +81,40 @@ const Arrow = styled.div`
 
 
 const Slider = () => {
+
+    const [slideIndex, setSlideIndex] =useState(0);
+
+    const handleClick = (direction) => {
+        if(direction === 'left') {
+            setSlideIndex(slideIndex > 0 ? slideIndex-1 : 2)
+        } else {
+            setSlideIndex(slideIndex < 2 ? slideIndex +1 : 0)
+        }
+    }
   return (
     <Container>
-        <Arrow direction='left'>
-            <ArrowLeftOutlinedIcon />
-        </Arrow>
-        <Wrapper>
-            <Slide bg='f5f1fd'>
+      <Arrow direction="left" onClick={() => handleClick("left")}>
+        <ArrowLeftOutlinedIcon />
+      </Arrow>
+      <Wrapper slideIndex={slideIndex}>
+        {sliderItems.map((item) => (
+          <Slide bg={item.bg}>
             <ImageContainer>
-                <Image />
+              <Image src={item.img} />
             </ImageContainer>
             <InfoContainer>
-                <Title></Title>
-                <Description></Description>
-                <Button></Button>
+              <Title>{item.title}</Title>
+              <Description>{item.description}</Description>
+              <Button>SHOW NOW</Button>
             </InfoContainer>
-            </Slide>
-        </Wrapper>
-        <Arrow direction='right'>
-            <ArrowRightOutlinedIcon />
-        </Arrow>
+          </Slide>
+        ))}
+      </Wrapper>
+      <Arrow direction="right" onClick={() => handleClick("right")}>
+        <ArrowRightOutlinedIcon />
+      </Arrow>
     </Container>
-
-
-  )
+  );
 };
 
 export default Slider;
