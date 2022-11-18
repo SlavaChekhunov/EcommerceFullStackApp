@@ -32,11 +32,11 @@ const Data = () => {
 
       {data.map((product)=> (
         <div key={(product.id)}>
-           <div><img src={product.image} alt="mens clothing"/></div> 
-           <h2>{product.title}</h2> 
-           <p>{product.description}</p> 
-           <p>{product.price}</p> 
-          </div>
+          <div><img src={product.image} alt="mens clothing"/></div> 
+          <h2>{product.title}</h2> 
+          <p>{product.description}</p> 
+          <p>{product.price}</p> 
+        </div>
       ))}  
     </div>
   );
