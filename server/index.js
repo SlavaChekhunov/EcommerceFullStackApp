@@ -1,2 +1,5 @@
-console.log('hello')
-//nodemon allows us to refresh our application automatically, otherwise we would have to do it manually all the time
+const express = require('express');
+const app = express();
+const mongoose = require('mongoose');
+const dotenv = require('dotenv');
+dotenv.config();
