@@ -11,7 +11,7 @@ export const sliderItems = [
   {
     id: 1,
     img: "https://freedesignfile.com/upload/2018/04/Girl-wearing-sunglasses-wearing-stylish-floral-dress-pose-Stock-Photo-05.jpg",
-    alt: "girl wearing sunglasses and a stylish floral dress",
+    alt: "woman wearing sunglasses and a stylish floral dress",
     title: "Autumn Collection",
     description:
       "DON'T MISS OUT ON OUR AWESOME FALL COLLECTION. CHECK OUT BELOW AND GET 40% OFF YOUR ORDER",

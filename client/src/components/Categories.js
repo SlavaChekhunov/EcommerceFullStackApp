@@ -10,11 +10,11 @@ const Container = styled.ul`
 `;
 
 const Categories = () => {
-    return <Container>
+    return (<Container>
         {categories.map((item) =>(
-            <CategoryItem item={item}/>
+            <CategoryItem item={item} key={item.id}/>
         ))}
-    </Container>;
+    </Container>);
 }
 
 export default Categories  

@@ -15,14 +15,15 @@ const Container = styled.div`
     overflow: hidden;
 `;
 
-const Wrapper = styled.div`
+const Wrapper = styled.ul`
     height: 100%;
     display: flex;
     transition: all 1.5s ease;
-    transform: translateX(${props=>props.slideIndex * -100}vw)
+    transform: translateX(${props=>props.slideIndex * -100}vw);
+    list-style: none;
 `;
 
-const Slide = styled.div`
+const Slide = styled.li`
     display: flex;
     align-items: center;
     width: 100vw;
@@ -86,9 +87,9 @@ const Slider = () => {
 
     const handleClick = (direction) => {
         if(direction === 'left') {
-            setSlideIndex(slideIndex > 0 ? slideIndex-1 : 2)
+            setSlideIndex(slideIndex > 0 ? slideIndex - 1 : 2)
         } else {
-            setSlideIndex(slideIndex < 2 ? slideIndex +1 : 0)
+            setSlideIndex(slideIndex < 2 ? slideIndex + 1 : 0)
         }
     }
   return (
