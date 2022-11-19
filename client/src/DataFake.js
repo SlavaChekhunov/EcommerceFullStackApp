@@ -12,7 +12,6 @@ const Data = () => {
           dataResponse: "JSON",
         })
           .then((response) => {
-            console.log(response.data)
             setData(response.data)
           })
           .catch((error) => {

@@ -1,6 +1,7 @@
 import Announcement from "../components/Announcement"
 import Navbar from "../components/Navbar"
 import Slider from "../components/Slider"
+import Categories from "../components/Categories"
 import Data from "../DataFake"
 
 const Home = () => {
@@ -9,7 +10,8 @@ const Home = () => {
       <Announcement />
         <Navbar />
         <Slider />
-        <Data />
+        <Categories />
+        <Data /> 
     </div>
   )
 }

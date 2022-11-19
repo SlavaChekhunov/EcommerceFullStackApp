@@ -2,7 +2,7 @@ import styled from "styled-components";
 import ArrowLeftOutlinedIcon from "@mui/icons-material/ArrowLeftOutlined";
 import ArrowRightOutlinedIcon from "@mui/icons-material/ArrowRightOutlined";
 import { useState } from "react";
-import {sliderItems} from "../data"
+import { sliderItems } from "../data"
 
 //check out props for styled components that allow you to separate different arrows. direction is a prop, left or right.
 //issues: figure out why the left one cannot be moved 10px to the left. 
@@ -23,7 +23,7 @@ const Wrapper = styled.div`
 `;
 
 const Slide = styled.div`
-   display: flex;
+    display: flex;
     align-items: center;
     width: 100vw;
     height: 100vh;
@@ -82,7 +82,7 @@ const Arrow = styled.div`
 
 const Slider = () => {
 
-    const [slideIndex, setSlideIndex] =useState(0);
+    const [slideIndex, setSlideIndex] = useState(0);
 
     const handleClick = (direction) => {
         if(direction === 'left') {
@@ -98,9 +98,9 @@ const Slider = () => {
       </Arrow>
       <Wrapper slideIndex={slideIndex}>
         {sliderItems.map((item) => (
-          <Slide bg={item.bg}>
+          <Slide bg={item.bg} key={item.id}>
             <ImageContainer>
-              <Image src={item.img} />
+              <Image src={item.img} alt={item.alt}/>
             </ImageContainer>
             <InfoContainer>
               <Title>{item.title}</Title>
