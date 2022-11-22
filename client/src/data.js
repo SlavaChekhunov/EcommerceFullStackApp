@@ -30,19 +30,19 @@ export const sliderItems = [
 export const categories = [
   {
     id: 0,
-    img: "./assets/images/philMonte.jpg",
+    img: "https://images.unsplash.com/photo-1607345366928-199ea26cfe3e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1287&q=80",
     title: "SHIRT STYLE",
     alt: "man in black and white plaid button up shirt wearing black sunglasses"
   },
   {
     id: 1,
-    img: "./assets/images/mathildeLangevin.avif",
+    img: "https://images.unsplash.com/photo-1592621385612-4d7129426394?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1287&q=80",
     title: "LOUNGEWEAR LOVE",
     alt: "woman in white and black stripe dress shirt wearing black framed eyeglasses"
   },
   {
     id: 2,
-    img: "https://unsplash.com/photos/I09HTzzBQBs",
+    img: "https://images.unsplash.com/photo-1518651558381-e111dc4e655f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1287&q=80",
     title: "LIGHT JACKETS",
     alt: "man holding his brown jacket and standing in front of brown concrete storefront"
   }
