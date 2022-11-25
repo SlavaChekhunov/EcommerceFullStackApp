@@ -1,12 +1,13 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import StripeCheckout from "react-stripe-checkout";
+import { useNavigate } from "react-router-dom";
 const KEY="pk_test_51M5IH6JPvhgkKcxC0cW8dyK1iyBHjR9LtmYQSFvhJK6hQhlUyXm0uUEOdAqHSeLOAuFpcIawAAVqUsQF7pkz6af700PcLDznJM"
 //so stripe api on the client side returns us a token which we can pass to our backend node.js application and use it there
 
 function Pay() {
-
   const [stripeToken, setStripeToken] = useState(null);
+  const navigate = useNavigate();
 
   const onToken = (token) => {
     setStripeToken(token);
@@ -22,12 +23,13 @@ function Pay() {
         }
         );
         console.log(res.data);
+        navigate("/success");
       } catch(err) {
         console.log(err)
       }
     }
     stripeToken && makeRequest()
-  }, [stripeToken])
+  }, [stripeToken, navigate])
 
 
   return (
@@ -39,14 +41,16 @@ function Pay() {
         justifyContent: "center",
       }}
     >
-      <StripeCheckout name="Summer Shop" 
-      image="https://avatars1.githubusercontent.com/u/1486366?v=4"
-      billingAddress
-      shippingAddress
-      description="Your total is $20"
-      amount={2000}
-      token={onToken}
-      stripeKey={KEY}>
+      {stripeToken ? (<span>Processing Payment. Please wait.</span>) : (
+
+        <StripeCheckout name="Summer Shop" 
+        image="https://avatars1.githubusercontent.com/u/1486366?v=4"
+        billingAddress
+        shippingAddress
+        description="Your total is $20"
+        amount={2000}
+        token={onToken}
+        stripeKey={KEY}>
         <button
           style={{
             border: "none",
@@ -58,10 +62,11 @@ function Pay() {
             fontWeight: "600",
             cursor: "pointer",
           }}
-        >
+          >
           Pay Now
         </button>
       </StripeCheckout>
+        )}
     </div>
   );
 }
