@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react"
 import axios from "axios"
+import Product from "./components/Product"
 
-const Data = () => {
+
+const Data = ({stuff}) => {
     const [loading, setLoading] = useState(false);
     const [data, setData] = useState([]);
 
@@ -23,22 +25,23 @@ const Data = () => {
 
   return (
     <div>
+
       {loading && (<div>
           {""}
           <h1>Loading...</h1>
         </div>
         )}
+    
 
-      {data.map((product)=> (
+{data.map((product)=> (
         <div key={(product.id)}>
-          <div><img src={product.image} alt="mens clothing"/></div> 
-          <h2>{product.title}</h2> 
-          <p>{product.description}</p> 
-          <p>{product.price}</p> 
+        <img src={product.image} alt="mens clothing"/>
         </div>
-      ))}  
+        ))}  
+       
+   
     </div>
-  );
+    );
 }
 
 export default Data

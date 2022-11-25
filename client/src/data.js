@@ -32,18 +32,21 @@ export const categories = [
     id: 0,
     img: "https://images.unsplash.com/photo-1607345366928-199ea26cfe3e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1287&q=80",
     title: "SHIRT STYLE",
-    alt: "man in black and white plaid button up shirt wearing black sunglasses"
+    alt: "man in black and white plaid button up shirt wearing black sunglasses",
+    cat:"shirts"
   },
   {
     id: 1,
     img: "https://images.unsplash.com/photo-1592621385612-4d7129426394?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1287&q=80",
     title: "LOUNGEWEAR LOVE",
-    alt: "woman in white and black stripe dress shirt wearing black framed eyeglasses"
+    alt: "woman in white and black stripe dress shirt wearing black framed eyeglasses",
+    cat:"women"
   },
   {
     id: 2,
     img: "https://images.unsplash.com/photo-1518651558381-e111dc4e655f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1287&q=80",
     title: "LIGHT JACKETS",
-    alt: "man holding his brown jacket and standing in front of brown concrete storefront"
+    alt: "man holding his brown jacket and standing in front of brown concrete storefront",
+    cat:"jackets"
   }
 ]
