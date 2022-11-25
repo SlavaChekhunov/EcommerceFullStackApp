@@ -8,13 +8,12 @@ const Home = () => {
   return (
     <div>
       <Announcement />
-        <Navbar />
-        <Slider />
-        <Categories />
-        <Products />
+      <Navbar />
+      <Slider />
+      <Categories />
+      {/* <Products /> */}
     </div>
   )
 };
 
 export default Home
-

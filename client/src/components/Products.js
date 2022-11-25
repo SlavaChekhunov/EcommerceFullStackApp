@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Data from "../DataFake";
 import Product from "./Product";
+import React from "react";
 
 const Container = styled.div`
     padding: 20px;
@@ -13,9 +14,9 @@ const Products = ({data}) => {
     
     return (
         <>
-        <Container>
-            <Data/>
-        </Container>
+            <Container>
+                <Product/>
+            </Container>
         </>
     )
 }

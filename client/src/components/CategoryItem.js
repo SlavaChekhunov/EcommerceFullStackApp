@@ -10,7 +10,7 @@ const Container = styled.li`
 `;
 const Image = styled.img`
     max-width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: cover;
 `;
 const Info = styled.div`

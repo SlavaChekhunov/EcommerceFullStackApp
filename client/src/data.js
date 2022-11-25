@@ -40,7 +40,7 @@ export const categories = [
     img: "https://images.unsplash.com/photo-1592621385612-4d7129426394?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1287&q=80",
     title: "LOUNGEWEAR LOVE",
     alt: "woman in white and black stripe dress shirt wearing black framed eyeglasses",
-    cat:"women"
+    cat:"loungewear"
   },
   {
     id: 2,
