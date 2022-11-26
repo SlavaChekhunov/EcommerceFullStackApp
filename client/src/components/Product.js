@@ -3,7 +3,7 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import SearchIcon from "@mui/icons-material/Search";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 
-const Info = styled.div`
+const Info = styled.ul`
   opacity: 0;
   width: 100%;
   height: 100%;
@@ -15,13 +15,16 @@ const Info = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.5s ease;
+  transition: all 0.25s ease;
   cursor: pointer;
+  list-style: none;
+  padding: 0;
 `;
 
-const Container = styled.div`
+const Container = styled.li`
   flex: 1;
   margin: 5px;
+  padding: 0;
   min-width: 280px;
   height: 350px;
   display: flex;
@@ -29,7 +32,8 @@ const Container = styled.div`
   justify-content: center;
   background-color: #f5fbfd;
   position: relative;
-  &:hover ${Info} {
+  &&:hover ${Info},
+  &&:focus-within ${Info} {
     opacity: 1;
   }
 `;
@@ -47,7 +51,7 @@ const Image = styled.img`
   z-index: 2;
 `;
 
-const Icon = styled.div`
+const Icon = styled.li`
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -56,8 +60,9 @@ const Icon = styled.div`
   align-items: center;
   justify-content: center;
   margin: 10px;
-  transition: all 0.5s ease;
-  &:hover {
+  transition: all 0.25s ease;
+  &&:hover,
+  &&:focus {
     background-color: #e9f5f5;
     transform: scale(1.1);
   }
@@ -65,17 +70,17 @@ const Icon = styled.div`
 
 const Product = ({item}) => {
   return (
-    <Container>
+    <Container tabIndex={-1}>
         <Circle />
-        <Image src={item.img}/>
+        <Image src={item.img} alt={item.alt} tabIndex={-1}/>
         <Info>
-            <Icon>
+            <Icon tabIndex={0}>
                 <ShoppingCartIcon />
             </Icon>
-            <Icon>
+            <Icon tabIndex={0}>
                 <SearchIcon />
             </Icon>
-            <Icon>
+            <Icon tabIndex={0}>
                 <FavoriteBorderIcon />
             </Icon>
         </Info>

@@ -3,11 +3,12 @@ import {popularProducts} from "../data"
 import Product from "./Product";
 import React from "react";
 
-const Container = styled.div`
+const Container = styled.ul`
     padding: 20px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    list-style: none;
 `;
 
 const Products = () => {
@@ -16,7 +17,7 @@ const Products = () => {
         <>
             <Container>
                 {popularProducts.map(item=> (
-                    <Product item={item} id={item.id}/>
+                    <Product item={item} key={item.id}/>
                 ))}
             </Container>
         </>
