@@ -1,13 +1,18 @@
 import React from "react";
+import styled from "styled-components"
 import Categories from "./Categories";
 import Products from "./Products";
+import Newsletter from "./Newsletter";
 
-const HomeMain = (props) => {
+const Container = styled.main``;
+
+const HomeMain = () => {
     return (
-        <main id="homeMain">
+        <Container id="homeMain">
             <Categories />
             <Products />
-        </main>
+            <Newsletter />
+        </Container>
     );
 };
 export default HomeMain;

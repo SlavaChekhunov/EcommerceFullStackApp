@@ -4,10 +4,14 @@ import { Badge } from '@mui/material';
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 
 const Container = styled.div`
-  height: 60px;
+  min-height: 40px;
 `
 const Wrapper = styled.div`
-  padding: 10px 20px;
+  width: 90%;
+  max-width: 1400px;
+  margin: 0 auto;
+`
+const NavigationMenu = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -45,37 +49,37 @@ align-items: center;
 justify-content: flex-end;
 `
 const MenuItem = styled.div`
-    font-size: 14px;
+    font-size: 1.25rem;
     cursor: pointer;
     flex: 1;
     display: flex;
     justify-content: flex-end;
 `
-    
-
 const Navbar = () => {
   return (
     <Container>
       <Wrapper>
-        <Left>
-          <Language>EN</Language>
-          <SearchContainer>
-            <Input />
-            <Search style={{color: 'grey', fontSize: 16}}/>
-          </SearchContainer>
-        </Left>
-        <Center>
-          <Logo>SUMMER</Logo>
-        </Center>
-        <Right>
-          <MenuItem>Register</MenuItem>
-          <MenuItem>Sign In</MenuItem>
-          <MenuItem>
-            <Badge badgeContent={4} color="primary">
-              <ShoppingCartOutlinedIcon />
-            </Badge>
-          </MenuItem>
-        </Right>
+        <NavigationMenu>
+          <Left>
+            <Language>EN</Language>
+            <SearchContainer>
+              <Input />
+              <Search style={{color: 'grey', fontSize: 16}}/>
+            </SearchContainer>
+          </Left>
+          <Center>
+            <Logo>SUMMER</Logo>
+          </Center>
+          <Right>
+            <MenuItem>Register</MenuItem>
+            <MenuItem>Sign In</MenuItem>
+            <MenuItem>
+              <Badge badgeContent={4} color="primary">
+                <ShoppingCartOutlinedIcon />
+              </Badge>
+            </MenuItem>
+          </Right>
+        </NavigationMenu>
       </Wrapper>
     </Container>
   );

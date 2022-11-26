@@ -30,6 +30,7 @@ const Slide = styled.li`
     height: 100vh;
     background-color: #${props=>props.bg};
 `;
+
 const ImageContainer = styled.div`
     height: 100%;
     flex: 1;
@@ -38,6 +39,7 @@ const ImageContainer = styled.div`
 const Image = styled.img`
     height: 80%;
 `;
+
 const InfoContainer = styled.div`
     flex: 1;
     padding: 50px;
@@ -79,7 +81,6 @@ const Arrow = styled.div`
     right: ${(props)=> props.direction ==='right' && '10px'}
     // left: ${(props)=> props.direction ==='left' && '10px'}
 `;
-
 
 const Slider = () => {
 

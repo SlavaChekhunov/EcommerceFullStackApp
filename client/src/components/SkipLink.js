@@ -1,4 +1,3 @@
-
 import styled from "styled-components";
 
 const Anchor = styled.a`
@@ -16,7 +15,7 @@ const Anchor = styled.a`
         left: 5px;
     }
 `
-const SkipLink = (props) => {
+const SkipLink = () => {
     return (
         <>
             <Anchor href="#homeMain">

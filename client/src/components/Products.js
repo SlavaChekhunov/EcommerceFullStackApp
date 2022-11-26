@@ -3,7 +3,13 @@ import {popularProducts} from "../data"
 import Product from "./Product";
 import React from "react";
 
-const Container = styled.ul`
+const Wrapper = styled.div`
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+`
+
+const ProductsList = styled.ul`
     padding: 20px;
     display: flex;
     flex-wrap: wrap;
@@ -14,13 +20,15 @@ const Container = styled.ul`
 const Products = () => {
     
     return (
-        <>
-            <Container>
-                {popularProducts.map(item=> (
-                    <Product item={item} key={item.id}/>
-                ))}
-            </Container>
-        </>
+        <section>
+            <Wrapper>
+                <ProductsList>
+                    {popularProducts.map(item=> (
+                        <Product item={item} key={item.id}/>
+                    ))}
+                </ProductsList>
+            </Wrapper>
+        </section>
     )
 }
 
