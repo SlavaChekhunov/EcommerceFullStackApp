@@ -4,7 +4,7 @@ import Products from "./Products";
 
 const HomeMain = (props) => {
     return (
-        <main>
+        <main id="homeMain">
             <Categories />
             <Products />
         </main>
