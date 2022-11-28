@@ -13,10 +13,10 @@ const Container = styled.div`
     font-weight: bold;
 `
 
-const Announcement = ({message}) => {
+const Announcement = ({message, mainID}) => {
   return (
     <Container>
-      <SkipLink />
+      <SkipLink mainID={mainID}/>
       <p>{message}</p>
     </Container>
   )

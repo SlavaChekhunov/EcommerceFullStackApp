@@ -15,10 +15,10 @@ const Anchor = styled.a`
         left: 5px;
     }
 `
-const SkipLink = () => {
+const SkipLink = ({mainID}) => {
     return (
         <>
-            <Anchor href="#homeMain">
+            <Anchor href={"#" + mainID}>
                 Skip to main content
             </Anchor>
         </>
