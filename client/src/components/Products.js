@@ -17,7 +17,9 @@ const ProductsList = styled.ul`
     list-style: none;
 `;
 
-const Products = () => {
+const Products = ({cat,filters,sort}) => {
+
+    console.log(cat,filters,sort)
     
     return (
         <section>
