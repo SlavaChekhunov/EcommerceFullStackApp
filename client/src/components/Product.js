@@ -2,6 +2,7 @@ import styled from "styled-components";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import SearchIcon from "@mui/icons-material/Search";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import { Link } from "react-router-dom";
 
 const Info = styled.ul`
   opacity: 0;
@@ -72,21 +73,23 @@ const Icon = styled.li`
 const Product = ({item}) => {
   return (
     <Container tabIndex={-1}>
-        <Circle />
-        <Image src={item.img} alt={item.alt} tabIndex={-1}/>
-        <Info>
-            <Icon tabIndex={0}>
-                <ShoppingCartIcon />
-            </Icon>
-            <Icon tabIndex={0}>
-                <SearchIcon />
-            </Icon>
-            <Icon tabIndex={0}>
-                <FavoriteBorderIcon />
-            </Icon>
-        </Info>
+      <Circle />
+      <Image src={item.image} alt={item.alt} tabIndex={-1} />
+      <Info>
+        <Icon tabIndex={0}>
+          <ShoppingCartIcon />
+        </Icon>
+        <Icon tabIndex={0}>
+          <Link to={`/product/${item._id}`}>
+            <SearchIcon />
+          </Link>
+        </Icon>
+        <Icon tabIndex={0}>
+          <FavoriteBorderIcon />
+        </Icon>
+      </Info>
     </Container>
-  )
+  );
 }
 
 export default Product

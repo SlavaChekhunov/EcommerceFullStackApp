@@ -51,7 +51,7 @@ const ProductList = ({mainID}) => {
     const value = e.target.value;
     setFilter({
       ...filters,
-      [e.target.name]: value,
+      [e.target.name]: value.toLowerCase(),
     });
   };
 
@@ -63,7 +63,7 @@ const ProductList = ({mainID}) => {
           message={"Summer Sale! Buy one and get one free"}
           mainID={mainID}
         />
-        <Title>Dresses</Title>
+        <Title>{cat}</Title>
         <FilterContainer>
           <Filter>
             <FilterText>Filter Products:</FilterText>
