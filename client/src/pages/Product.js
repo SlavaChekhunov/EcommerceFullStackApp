@@ -1,17 +1,18 @@
-import styled from "styled-components"
-import Announcement from "../components/Announcement"
+import styled from "styled-components";
+import Announcement from "../components/Announcement";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
-import Footer from "../components/Footer"
-import Navbar from "../components/Navbar"
-import Newsletter from "../components/Newsletter"
+import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
+import Newsletter from "../components/Newsletter";
 import { useLocation } from "react-router-dom";
 import { useState } from "react";
 import { useEffect } from "react";
 import { publicRequest } from "../requestMethod";
+import { addProduct } from "../redux/cartRedux";
+import { useDispatch } from "react-redux";
 
-const Container = styled.div`
-`;
+const Container = styled.div``;
 
 const Wrapper = styled.div`
   padding: 50px;
@@ -109,27 +110,46 @@ const Button = styled.button`
   background-color: white;
   cursor: pointer;
   font-weight: 500;
-  &:hover{
-      background-color: #f8f4f4;
+  &:hover {
+    background-color: #f8f4f4;
   }
 `;
-
 
 const Product = () => {
   const location = useLocation();
   const id = location.pathname.split("/")[2];
 
   const [product, setProduct] = useState({});
+  const [quantity, setQuantity] = useState(1);
+  const [color, setColor] = useState("");
+  const [size, setSize] = useState("");
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const getProduct = async () => {
-      try{
-        const res = await publicRequest.get("/products/find/"+id);
+      try {
+        const res = await publicRequest.get("/products/find/" + id);
         setProduct(res.data);
       } catch {}
     };
     getProduct();
   }, [id]);
+
+  const handleQuantity = (type) => {
+    if (type === "dec") {
+      quantity > 1 && setQuantity(quantity - 1);
+    } else {
+      setQuantity(quantity + 1);
+    }
+  };
+
+
+
+  const handleClick = () => {
+    dispatch(
+      addProduct({ ...product, quantity, color, size })
+    );
+  };
 
   return (
     <Container>
@@ -147,13 +167,13 @@ const Product = () => {
             <Filter>
               <FilterTitle>Color</FilterTitle>
               {product.color?.map((c) => (
-                <FilterColor color={c} key={c} />
+                <FilterColor color={c} key={c} onClick={()=>setColor(c)}/>
               ))}
               ;
             </Filter>
             <Filter>
               <FilterTitle>Size</FilterTitle>
-              <FilterSize>
+              <FilterSize onChange={(e) => setSize(e.target.value)}>
                 {product.size?.map((s) => (
                   <FilterSizeOption key={s}>{s}</FilterSizeOption>
                 ))}
@@ -162,11 +182,11 @@ const Product = () => {
           </FilterContainer>
           <AddContainer>
             <AmountContainer>
-              <RemoveIcon />
-              <Amount>1</Amount>
-              <AddIcon />
+              <RemoveIcon onClick={() => handleQuantity("dec")} />
+              <Amount>{quantity}</Amount>
+              <AddIcon onClick={() => handleQuantity("inc")} />
             </AmountContainer>
-            <Button>ADD TO CART</Button>
+            <Button onClick={handleClick}>ADD TO CART</Button>
           </AddContainer>
         </InfoContainer>
       </Wrapper>
@@ -174,6 +194,6 @@ const Product = () => {
       <Footer />
     </Container>
   );
-}
+};
 
-export default Product
+export default Product;
