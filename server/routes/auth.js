@@ -19,6 +19,7 @@ router.post("/register", async (req, res) => {
   } catch (err) {
     //you can if there is no request for body, email/password, you can do error status 400...please enter password etc.
     res.status(500).json(err);
+    console.log(err)
   }
 });
 
@@ -60,6 +61,7 @@ router.post("/login", async (req, res) => {
         res.status(200).json({...others, accessToken});
     } catch (err) {
         res.status(500).json(err)
+        console.log(err)
     }
 })
 
