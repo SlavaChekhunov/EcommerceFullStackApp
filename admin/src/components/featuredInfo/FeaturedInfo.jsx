@@ -25,7 +25,7 @@ export default function FeaturedInfo() {
       <div className="featuredItem">
         <span className="featuredTitle">Revenue</span>
         <div className="featuredMoneyContainer">
-          <span className="featuredMoney">$2,415</span>
+          <span className="featuredMoney">${income[1]?.total}</span>
           <span className="featuredMoneyRate">
             %{Math.floor(percentage)}{" "}
             {percentage < 0 ? (
