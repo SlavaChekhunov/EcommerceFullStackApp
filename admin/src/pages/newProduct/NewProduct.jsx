@@ -1,5 +1,8 @@
 import { useState } from "react";
 import "./newProduct.css";
+import { useDispatch } from "react-redux";
+import {supabase} from "../../suparbase";
+import {addProduct} from "../../redux/apiCalls";
 import {
   getStorage,
   ref,
@@ -12,6 +15,7 @@ export default function NewProduct() {
   const [inputs, setInputs] = useState({});
   const [file, setFile] = useState(null);
   const [category, setCategory] = useState([]);
+  const dispatch = useDispatch();
 
   const handleChange = (e) => {
     setInputs(prev=>{
@@ -19,23 +23,35 @@ export default function NewProduct() {
     })
   }
 
-  const handleCategories = (e) => {
+  const handleCategories = async (e) => {
     setCategory(e.target.value.split(','))
   }
 
-  const handleAddProduct = (e) => {
+  const handleAddProduct = async (e) => {
     e.preventDefault()
-    //upload file and call apiCalls
-    //gives the file a unique name based on the timestamp
     const fileName = new Date().getTime() + file.name;
-    const storage = getStorage(app);
-    const StorageRef = ref(storage, fileName)
+    
+    const { data, error } = await supabase.storage
+      .from("images")
+      .upload(fileName, file, {
+          cacheControl: "3600",
+          upsert: false,
+        });
 
-  }
+        console.log(data)
 
+    if(data) {
+      const product = {...inputs, image: data.path, categories: category};
+      addProduct(product, dispatch)
+    }
 
-  return (
-    <div className="newProduct">
+    if(error) {
+      console.log(error)
+    }
+    }
+    
+    return (
+      <div className="newProduct">
       <h1 className="addProductTitle">New Product</h1>
       <form className="addProductForm">
         <div className="addProductItem">
