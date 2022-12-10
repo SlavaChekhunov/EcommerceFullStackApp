@@ -3,13 +3,6 @@ import "./newProduct.css";
 import { useDispatch } from "react-redux";
 import {supabase} from "../../suparbase";
 import {addProduct} from "../../redux/apiCalls";
-import {
-  getStorage,
-  ref,
-  uploadBytesResumable,
-  getDownloadURL,
-} from "firebase/storage";
-import app from "../../firebase";
 
 export default function NewProduct() {
   const [inputs, setInputs] = useState({});
