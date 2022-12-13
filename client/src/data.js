@@ -1,55 +1,57 @@
 export const sliderItems = [
   {
     id: 0,
-    img: "https://ae01.alicdn.com/kf/H4546462a18234922a96f16c2b7c63257o/BeauTana-2021-New-Summer-Midi-Dress-Floral-Print-V-Neck-Short-Sleeve-Ruffles-Vestidos-Casual-Long.jpg_Q90.jpg_.webp",
+    img: "https://m.media-amazon.com/images/I/81Ti9ezZJoL._AC_SL1500_.jpg",
+    // "https://images10.newegg.com/BizIntell/item/24/012/24-012-040/features-layout-1_062520.png",
     alt: "woman in floral dress carrying a wicker handbag",
-    title: "Summer Sale",
+    title: "Christmas Sale",
     description:
-      "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
-    bg: "f5fafd",
+      "Best 1440p 240hz displays on the market. ASUS ROG Swift 27” Gaming Monitor 30% off!",
+    bg: "white",
   },
   {
     id: 1,
-    img: "https://freedesignfile.com/upload/2018/04/Girl-wearing-sunglasses-wearing-stylish-floral-dress-pose-Stock-Photo-05.jpg",
+    img: "https://c1.neweggimages.com/ProductImageCompressAll1280/19-113-734-S04.jpg",
     alt: "woman wearing sunglasses and a stylish floral dress",
-    title: "Autumn Collection",
+    title: "Holiday Bundles on Computer Parts",
     description:
-      "DON'T MISS OUT ON OUR AWESOME FALL COLLECTION. CHECK OUT BELOW AND GET 40% OFF YOUR ORDER",
-    bg: "fcf1ed",
+      "2 FREE VIDEO GAMES INCLUDED WITH EACH PURCHASE OF THE RYZEN ZEN 4 GENERATION OF CPUS",
+    bg: "white",
   },
   {
     id: 2,
-    img: "https://images.unsplash.com/photo-1611747582190-feff22542ba1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1038&q=80",
+    img: "https://c1.neweggimages.com/ProductImageCompressAll1280/AKRFS2112290GUNS7D9.jpg",
     alt: "woman dressed in all white, carrying a white handbag outside during winter",
-    title: "Winter Collection",
-    description: "GREAT WINTER DEALS. BUY 2 FOR THE PRICE OF 1 AND 20% OFF WHOLE WINTER COLLECTION",
-    bg: "fbf0f4",
+    title: "GPUs finally in stock",
+    description:
+      "GREAT VALUE FOR LAST GEN OF GPUS GOING UNDER MRSP!",
+    bg: "white",
   },
 ];
 
 export const categories = [
   {
     id: 0,
-    img: "https://images.unsplash.com/photo-1607345366928-199ea26cfe3e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1287&q=80",
-    title: "SHIRT STYLE",
+    img: "https://static.techspot.com/articles-info/2486/images/2022-06-21-image-6.jpg",
+    title: "GPU DESIGN",
     alt: "man in black and white plaid button up shirt wearing black sunglasses",
-    cat:"shirts"
+    cat: "shirts",
   },
   {
     id: 1,
-    img: "https://images.unsplash.com/photo-1592621385612-4d7129426394?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1287&q=80",
-    title: "LOUNGEWEAR LOVE",
+    img: "https://static.techspot.com/articles-info/2444/images/2022-04-05-image-6.jpg",
+    title: "MONITOR ENTHUSIASTS",
     alt: "woman in white and black stripe dress shirt wearing black framed eyeglasses",
-    cat:"loungewear"
+    cat: "loungewear",
   },
   {
     id: 2,
-    img: "https://images.unsplash.com/photo-1518651558381-e111dc4e655f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1287&q=80",
-    title: "LIGHT JACKETS",
+    img: "https://static.techspot.com/articles-info/2567/images/2022-11-16-image-2.jpg",
+    title: "INTEL VS RYZEN CPUs",
     alt: "man holding his brown jacket and standing in front of brown concrete storefront",
-    cat:"jackets"
-  }
-]
+    cat: "jackets",
+  },
+];
 
 export const popularProducts = [
   {

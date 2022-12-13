@@ -36,6 +36,7 @@ padding: 5px;
 `
 const Input = styled.input`
 border: none;
+outline-width: 0;
 `
 const Center = styled.div`
 flex: 1;
@@ -51,12 +52,15 @@ align-items: center;
 justify-content: flex-end;
 `
 const MenuItem = styled.div`
-    font-size: 1.25rem;
-    cursor: pointer;
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
-`
+font-size: 1.25rem;
+cursor: pointer;
+flex: 1;
+display: flex;
+justify-content: flex-end;
+padding: 0 50px 0 50px;
+text-decoration: none;
+`;
+
 const Navbar = () => {
   const quantity = useSelector(state=> state.cart.quantity);
   console.log(quantity);
@@ -72,11 +76,15 @@ const Navbar = () => {
             </SearchContainer>
           </Left>
           <Center>
-            <Logo>SUMMER</Logo>
+            <Logo>HARDWARE NERDS</Logo>
           </Center>
           <Right>
+            <Link to="/register">
             <MenuItem>Register</MenuItem>
+            </Link>
+            <Link to="/login">
             <MenuItem>Sign In</MenuItem>
+            </Link>
             <Link to="/cart">
             <MenuItem>
               <Badge badgeContent={quantity} color="primary">

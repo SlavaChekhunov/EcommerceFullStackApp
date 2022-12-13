@@ -6,7 +6,7 @@ import Slider from "./Slider";
 const Header = ({mainID}) => {
     return (
         <header>
-            <Announcement message={"Summer Sale! Buy one and get one free"} mainID={mainID} />
+            <Announcement message={"Welcome Hardware Nerds! Buy one and get one free."} mainID={mainID} />
             <Navbar />
             <Slider />
         </header>

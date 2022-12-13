@@ -13,6 +13,7 @@ const Container = styled.div`
     display: flex;
     position: relative;
     overflow: hidden;
+    padding-left: 5px;
 `;
 
 const Wrapper = styled.ul`
@@ -34,6 +35,7 @@ const Slide = styled.li`
 const ImageContainer = styled.div`
     height: 100%;
     flex: 1;
+    padding-left: 20px;
 `;
 
 const Image = styled.img`
@@ -63,24 +65,23 @@ const Button = styled.button`
     cursor: pointer;
 `;
 
-const Arrow = styled.div`
-    cursor: pointer;
-    z-index: 2;
-    opacity: 0.75;
-    width: 50px;
-    height: 50px;
-    background-color: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-    right: ${(props)=> props.direction ==='right' && '10px'}
-    // left: ${(props)=> props.direction ==='left' && '10px'}
-`;
+  const Arrow = styled.div`
+  cursor: pointer;
+  z-index: 2;
+  opacity: 0.50;
+  width: 50px;
+  height: 50px;
+  background-color: grey;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  right: ${(props)=> props.direction ==='right' && '10px'}
+  `;
 
 const Slider = () => {
 
@@ -94,7 +95,7 @@ const Slider = () => {
         }
     }
   return (
-    <Container>
+    <Container >
       <Arrow direction="left" onClick={() => handleClick("left")}>
         <ArrowLeftOutlinedIcon />
       </Arrow>
