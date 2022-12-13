@@ -9,12 +9,14 @@ import {
   getDownloadURL,
 } from "firebase/storage";
 import app from "../../firebase";
+import { useNavigate } from "react-router-dom";
 
 export default function NewProduct() {
   const [inputs, setInputs] = useState({});
   const [file, setFile] = useState(null);
   const [category, setCategory] = useState([]);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setInputs(prev=>{
