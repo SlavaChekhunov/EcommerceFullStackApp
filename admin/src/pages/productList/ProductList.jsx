@@ -2,9 +2,11 @@ import "./productList.css";
 import { DataGrid } from "@material-ui/data-grid";
 import { DeleteOutline } from "@material-ui/icons";
 import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteProduct, getProducts } from "../../redux/apiCalls";
+import Topbar from "../../components/topbar/Topbar";
+import Sidebar from "../../components/sidebar/Sidebar";
 
 export default function ProductList() {
   const dispatch = useDispatch();
@@ -60,15 +62,20 @@ export default function ProductList() {
   ];
 
   return (
-    <div className="productList">
-      <DataGrid
-        rows={products}
-        disableSelectionOnClick
-        columns={columns}
-        pageSize={8}
-        getRowId={(row)=>row._id}
-        checkboxSelection
-      />
-    </div>
+    <>
+      <Topbar />
+      <div className="container">
+        <Sidebar />
+        <div className="productList" style={{ height: 960 }}>
+          <DataGrid
+            rows={products}
+            disableSelectionOnClick
+            columns={columns}
+            getRowId={(row) => row._id}
+            checkboxSelection
+          />
+        </div>
+      </div>
+    </>
   );
 }

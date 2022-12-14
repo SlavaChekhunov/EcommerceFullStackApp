@@ -8,8 +8,6 @@ import ProductList from "./pages/productList/ProductList";
 import Product from "./pages/product/Product";
 import NewProduct from "./pages/newProduct/NewProduct";
 import Login from "./pages/login/Login";
-import Sidebar from "./components/sidebar/Sidebar";
-import Topbar from "./components/topbar/Topbar";
 import { useSelector } from "react-redux";
 
 function App() {
@@ -22,8 +20,7 @@ function App() {
   
   return (
   <Routes>
-      <Route path="/login" element={<Login />} />
-      {admin && (
+      {admin ? 
         <>
         <Route path="/" element={<Home />} />
         <Route path="/users" element={<UserList />} />
@@ -35,44 +32,10 @@ function App() {
         <Route path="/newproduct" element={<NewProduct />} />
         <Route path="/products/:category" element={<ProductList />} />
         <Route path="/product/:id" element={<Product />} />
-        
-        </>
-      )}
+        </> : 
+        <Route path="/login" element={<Login />} />
+      }
   </Routes>
-    // <Routes>
-    //     <Route path="/login">
-    //       <Login />
-    //     </Route>
-    //     {admin && (
-    //       <>
-    //         <Topbar />
-    //         <div className="container">
-    //           <Sidebar />
-    //           <Route exact path="/">
-    //             <Home />
-    //           </Route>
-    //           <Route path="/users">
-    //             <UserList />
-    //           </Route>
-    //           <Route path="/user/:userId">
-    //             <User />
-    //           </Route>
-    //           <Route path="/newUser">
-    //             <NewUser />
-    //           </Route>
-    //           <Route path="/products">
-    //             <ProductList />
-    //           </Route>
-    //           <Route path="/product/:productId">
-    //             <Product />
-    //           </Route>
-    //           <Route path="/newproduct">
-    //             <NewProduct />
-    //           </Route>
-    //         </div>
-    //       </>
-    //     )}
-    // </Routes>
   );
   }
 
