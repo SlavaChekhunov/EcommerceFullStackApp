@@ -171,13 +171,17 @@ const Cart = () => {
           tokenId: stripeToken.id,
           amount: cart.total * 100,
         })
-        navigate("/success", { data: res.data });
+        navigate("/success", { state:{
+          stripeData: res.data,
+          products: cart,
+        } });
       } catch (err) {
         console.log(err);
       }
     };
-     stripeToken && cart.total>=1 && makeRequest();
-   }, [stripeToken, cart.total, navigate]);
+    stripeToken && cart.total>=1 && makeRequest();
+  }, [stripeToken, cart.total, navigate]);
+  
 
   return (
     <Container>
@@ -254,7 +258,7 @@ const Cart = () => {
               token={onToken}
               stripeKey={KEY}
             >
-              <Button>CHECKOUT NOW</Button>
+              <Button >CHECKOUT NOW</Button>
             </StripeCheckout>
           </Summary>
         </Bottom>
