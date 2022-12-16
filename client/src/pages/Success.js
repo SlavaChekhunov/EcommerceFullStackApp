@@ -9,8 +9,11 @@ const Success = () => {
   //in Cart.jsx I sent data and cart. Please check that page for the changes.(in video it's only data)
   const data = location.state.stripeData;
   const cart = location.state.products;
+  
   const currentUser = useSelector((state) => state.user.currentUser);
   const [orderId, setOrderId] = useState(null);
+
+  console.log(currentUser)
 
   useEffect(() => {
     const createOrder = async () => {
@@ -19,13 +22,15 @@ const Success = () => {
           userId: currentUser._id,
           products: cart.products.map((item) => ({
             productId: item._id,
-            quantity: item._quantity,
+            quantity: item.quantity,
           })),
           amount: cart.total,
           address: data.billing_details.address,
         });
         setOrderId(res.data._id);
-      } catch {}
+      } catch(err) {
+        console.log(err)
+      }
     };
     data && createOrder();
   }, [cart, data, currentUser]);

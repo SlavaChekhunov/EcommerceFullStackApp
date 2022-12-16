@@ -12,7 +12,7 @@ import { userRequest } from "../requestMethod";
 import { useNavigate } from "react-router-dom";
 
 
-const KEY ="pk_test_51M5IH6JPvhgkKcxC0cW8dyK1iyBHjR9LtmYQSFvhJK6hQhlUyXm0uUEOdAqHSeLOAuFpcIawAAVqUsQF7pkz6af700PcLDznJM";
+const KEY = process.env.REACT_APP_STRIPE;
 
 const Container = styled.div``;
 
@@ -156,13 +156,15 @@ const Button = styled.button`
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
+  const [stripeToken, setStripeToken] = useState(null);
   const navigate = useNavigate();
 
-  const [stripeToken, setStripeToken] = useState(null);
 
   const onToken = (token) => {
     setStripeToken(token);
   };
+
+  console.log(stripeToken?.id)
 
    useEffect(() => {
      const makeRequest = async () => {
