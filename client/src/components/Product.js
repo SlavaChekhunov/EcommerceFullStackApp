@@ -31,7 +31,7 @@ const Container = styled.li`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #f5fbfd;
+  // background-color: #f5fbfd;
   position: relative;
   &&:hover ${Info},
   &&:focus-within ${Info} {
@@ -43,7 +43,7 @@ const Circle = styled.div`
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  background-color: white;
+  background-color: black;
   position: absolute;
 `;
 
@@ -73,7 +73,6 @@ const Icon = styled.li`
 const Product = ({item}) => {
   return (
     <Container tabIndex={-1}>
-      <Circle />
       <Image src={item.image} alt={item.alt} tabIndex={-1} />
       <Info>
         <Icon tabIndex={0}>

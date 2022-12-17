@@ -35,21 +35,21 @@ export const categories = [
     img: "https://static.techspot.com/articles-info/2486/images/2022-06-21-image-6.jpg",
     title: "GPU DESIGN",
     alt: "man in black and white plaid button up shirt wearing black sunglasses",
-    cat: "shirts",
+    cat: "GPU",
   },
   {
     id: 1,
     img: "https://static.techspot.com/articles-info/2444/images/2022-04-05-image-6.jpg",
     title: "MONITOR ENTHUSIASTS",
     alt: "woman in white and black stripe dress shirt wearing black framed eyeglasses",
-    cat: "loungewear",
+    cat: "Monitor",
   },
   {
     id: 2,
     img: "https://static.techspot.com/articles-info/2567/images/2022-11-16-image-2.jpg",
     title: "INTEL VS RYZEN CPUs",
     alt: "man holding his brown jacket and standing in front of brown concrete storefront",
-    cat: "jackets",
+    cat: "CPU",
   },
 ];
 

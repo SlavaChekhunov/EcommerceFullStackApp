@@ -6,14 +6,12 @@ import Product from "./pages/Product";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Success from "./pages/Success";
-import Pay from "./pages/Pay";
 import { useSelector } from "react-redux";
 
 function App() {
   const user = useSelector((state) => state.user.currentUser);
   return (
     <Routes>
-      <Route path="/pay" element={<Pay />} />
       <Route path="/" element={<Home />} />
       <Route path="/products/:category" element={<ProductList />} />
       <Route path="/product/:id" element={<Product />} />

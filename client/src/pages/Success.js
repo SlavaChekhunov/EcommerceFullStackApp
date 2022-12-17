@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { useLocation } from "react-router";
 import { Link } from "react-router-dom";
 import { userRequest } from "../requestMethod";
+import Button from "@mui/material/Button";
 
 const Success = () => {
   const location = useLocation();
@@ -12,8 +13,6 @@ const Success = () => {
   
   const currentUser = useSelector((state) => state.user.currentUser);
   const [orderId, setOrderId] = useState(null);
-
-  console.log(currentUser)
 
   useEffect(() => {
     const createOrder = async () => {
@@ -45,12 +44,18 @@ const Success = () => {
         justifyContent: "center",
       }}
     >
+      <img
+        src="https://yt3.googleusercontent.com/ytc/AMLnZu9KvYClnqgU4OrdgvX9juhvsc3ZECM-GznreSbi=s88-c-k-c0x00ffffff-no-rj"
+        alt="Hardware Nerds Logo"
+      />
+      <Link to="/">
+        <Button style={{ margin: "25px" }} variant="contained">
+          Continue Shopping.
+        </Button>
+      </Link>
       {orderId
         ? `Order has been created successfully. Your order number is ${orderId}`
         : `Successfull. Your order is being prepared...`}
-        <Link to="/">
-      <button style={{ padding: 10, marginTop: 20 }}>Go to Homepage</button>
-        </Link>
     </div>
   );
 };
