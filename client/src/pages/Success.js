@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { useLocation } from "react-router";
-import { Link } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router";
 import { userRequest } from "../requestMethod";
 import Button from "@mui/material/Button";
 
 const Success = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   //in Cart.jsx I sent data and cart. Please check that page for the changes.(in video it's only data)
   const data = location.state.stripeData;
   const cart = location.state.products;
@@ -33,6 +33,10 @@ const Success = () => {
     };
     data && createOrder();
   }, [cart, data, currentUser]);
+
+  const handleClick = () => {
+    navigate("/");
+  }
   
   return (
     <div
@@ -48,11 +52,9 @@ const Success = () => {
         src="https://yt3.googleusercontent.com/ytc/AMLnZu9KvYClnqgU4OrdgvX9juhvsc3ZECM-GznreSbi=s88-c-k-c0x00ffffff-no-rj"
         alt="Hardware Nerds Logo"
       />
-      <Link to="/">
-        <Button style={{ margin: "25px" }} variant="contained">
+        <Button style={{ margin: "25px" }} variant="contained" onClick={handleClick}>
           Continue Shopping.
         </Button>
-      </Link>
       {orderId
         ? `Order has been created successfully. Your order number is ${orderId}`
         : `Successfull. Your order is being prepared...`}

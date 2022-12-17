@@ -3,7 +3,7 @@ import Search from '@mui/icons-material/Search';
 import { Badge } from '@mui/material';
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import { useSelector } from "react-redux";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Container = styled.div`
   min-height: 40px;
@@ -63,7 +63,13 @@ text-decoration: none;
 
 const Navbar = () => {
   const quantity = useSelector(state=> state.cart.quantity);
-  console.log(quantity);
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate("/login")
+  }
+  const handleClickTwo = () => {
+    navigate("/register")
+  }
   return (
     <Container>
       <Wrapper>
@@ -72,25 +78,21 @@ const Navbar = () => {
             <Language>EN</Language>
             <SearchContainer>
               <Input />
-              <Search style={{color: 'grey', fontSize: 16}}/>
+              <Search style={{ color: "grey", fontSize: 16 }} />
             </SearchContainer>
           </Left>
           <Center>
             <Logo>HARDWARE NERDS</Logo>
           </Center>
           <Right>
-            <Link to="/register">
-            <MenuItem>Register</MenuItem>
-            </Link>
-            <Link to="/login">
-            <MenuItem>Sign In</MenuItem>
-            </Link>
+            <MenuItem onClick={handleClickTwo}>Register</MenuItem>
+            <MenuItem onClick={handleClick}>Sign In</MenuItem>
             <Link to="/cart">
-            <MenuItem>
-              <Badge badgeContent={quantity} color="primary">
-                <ShoppingCartOutlinedIcon />
-              </Badge>
-            </MenuItem>
+              <MenuItem>
+                <Badge badgeContent={quantity} color="primary">
+                  <ShoppingCartOutlinedIcon />
+                </Badge>
+              </MenuItem>
             </Link>
           </Right>
         </NavigationMenu>
