@@ -78,11 +78,9 @@ const ProductList = ({mainID}) => {
             </Select>
             <Select name="size" onChange={handleFilters}>
               <Option disabled>Size</Option>
-              <Option>XS</Option>
-              <Option>S</Option>
-              <Option>M</Option>
-              <Option>L</Option>
-              <Option>XL</Option>
+              <Option>24"</Option>
+              <Option>27"</Option>
+              <Option>32"</Option>
             </Select>
           </Filter>
           <Filter>

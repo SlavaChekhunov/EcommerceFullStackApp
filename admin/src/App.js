@@ -12,11 +12,12 @@ import { useSelector } from "react-redux";
 
 function App() {
 
-  const admin = useSelector((state) => state.user.currentUser.isAdmin);
+  // const admin = useSelector((state) => state.user.currentUser.isAdmin);
 
   return (
-  <Routes>
-      {admin ? 
+    <Routes>
+    <Route path="/login" element={<Login />} />
+      {/* {admin && ( */}
         <>
         <Route path="/" element={<Home />} />
         <Route path="/users" element={<UserList />} />
@@ -27,9 +28,8 @@ function App() {
         <Route path="/newproduct" element={<NewProduct />} />
         <Route path="/products/:category" element={<ProductList />} />
         <Route path="/product/:id" element={<Product />} />
-        </> : 
-        <Route path="/login" element={<Login />} />
-      }
+        </> 
+      {/* } */}
   </Routes>
   );
   }

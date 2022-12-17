@@ -138,6 +138,25 @@ export default function NewProduct() {
                 <option value="false">No</option>
               </select>
             </div>
+            <div className="addProductItem">
+              <label>Size</label>
+              <select onChange={handleChange} name="size">
+                <option >24"</option>
+                <option >27"</option>
+                <option >32"</option>
+              </select>
+            </div>
+            <div className="addProductItem">
+              <label>Color</label>
+              <select onChange={handleChange} name="color">
+                <option value="red">red</option>
+                <option value="blue">blue</option>
+                <option value="black">black</option>
+                <option value="white">white</option>
+                <option value="yellow">yellow</option>
+                <option value="green">green</option>
+              </select>
+            </div>
             <button className="addProductButton" onClick={handleAddProduct}>
               Create
             </button>
