@@ -164,6 +164,10 @@ const Cart = () => {
     setStripeToken(token);
   };
 
+  const handleClick = () => {
+    navigate("/")
+  }
+
    useEffect(() => {
      const makeRequest = async () => {
        try {
@@ -190,12 +194,11 @@ const Cart = () => {
       <Wrapper>
         <Title>YOUR BAG</Title>
         <Top>
-          <TopButton>CONTINUE SHOPPING</TopButton>
+          <TopButton onClick={handleClick}>CONTINUE SHOPPING</TopButton>
           <TopTexts>
             <TopText>Shopping Bag(2)</TopText>
             <TopText>Your Wishlist (0)</TopText>
           </TopTexts>
-          <TopButton type="filled">CHECKOUT NOW</TopButton>
         </Top>
         <Bottom>
           <Info>
@@ -249,16 +252,16 @@ const Cart = () => {
               <SummaryItemPrice>$ {cart.total}</SummaryItemPrice>
             </SummaryItem>
             <StripeCheckout
-              name="Summer Shop"
-              image="https://avatars1.githubusercontent.com/u/1486366?v=4"
+              name="Canada Hardware"
+              image="https://yt3.googleusercontent.com/ytc/AMLnZu9KvYClnqgU4OrdgvX9juhvsc3ZECM-GznreSbi=s88-c-k-c0x00ffffff-no-rj"
               billingAddress
               shippingAddress
               description={`Your total is $${cart.total}`}
-              amount={cart.total*100}
+              amount={cart.total * 100}
               token={onToken}
               stripeKey={KEY}
             >
-              <Button >CHECKOUT NOW</Button>
+              <Button>CHECKOUT NOW</Button>
             </StripeCheckout>
           </Summary>
         </Bottom>

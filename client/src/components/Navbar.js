@@ -38,6 +38,7 @@ const Input = styled.input`
 border: none;
 outline-width: 0;
 `
+
 const Center = styled.div`
 flex: 1;
 text-align: center;
@@ -61,6 +62,7 @@ padding: 0 50px 0 50px;
 text-decoration: none;
 `;
 
+
 const Navbar = () => {
   const quantity = useSelector(state=> state.cart.quantity);
   const navigate = useNavigate();
@@ -82,7 +84,7 @@ const Navbar = () => {
             </SearchContainer>
           </Left>
           <Center>
-            <Logo>HARDWARE NERDS</Logo>
+            <Logo>CANADA HARDWARE</Logo>
           </Center>
           <Right>
             <MenuItem onClick={handleClickTwo}>Register</MenuItem>

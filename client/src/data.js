@@ -10,20 +10,20 @@ export const sliderItems = [
   },
   {
     id: 1,
-    // img: "https://www.pngkey.com/png/detail/592-5929504_please-select-amd-ryzen-amd-cpu-ryzen-7.png",
+    img: "https://m.media-amazon.com/images/I/61DYLoyNRWL._AC_SL1384_.jpg",
     alt: "woman wearing sunglasses and a stylish floral dress",
     title: "Holiday Bundles on Computer Parts",
     description:
       "2 FREE VIDEO GAMES INCLUDED WITH EACH PURCHASE OF THE RYZEN ZEN 4 GENERATION OF CPUS",
-    bg: "fcf1ed",
+    // bg: "fcf1ed",
   },
   {
     id: 2,
-    // img: "https://c1.neweggimages.com/ProductImageCompressAll1280/AKRFS2112290GUNS7D9.jpg",
+    img: "https://c1.neweggimages.com/ProductImageCompressAll1280/AKRFS2112290GUNS7D9.jpg",
     alt: "woman dressed in all white, carrying a white handbag outside during winter",
     title: "GPUs finally in stock",
     description: "GREAT VALUE FOR LAST GEN OF GPUS GOING UNDER MRSP!",
-    bg: "faefef",
+    // bg: "faefef",
   },
 ];
 

@@ -102,70 +102,78 @@ const ContactItem = styled.li`
 const Payment = styled.img``
 const Footer = () => {
     return (
-        <>
-            <Container>
-                <Wrapper>
-                    <NavigationMenu>
-                        <Left>
-                            <LogoContainer>
-                                <Logo>
-                                    Summer
-                                </Logo>
-                            </LogoContainer>
-                            <Description>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi ea numquam modi facere est repellat beatae eaque, ipsam, sit at doloribus vero incidunt! Eveniet?
-                            </Description>
-                            <SocialContainer>
-                                <SocialList>
-                                    <SocialIcon colour="385999">
-                                        <FacebookIcon />
-                                    </SocialIcon>
-                                    <SocialIcon colour="E4405F">
-                                        <InstagramIcon />
-                                    </SocialIcon>
-                                    <SocialIcon colour="55ACEE">
-                                        <TwitterIcon />
-                                    </SocialIcon>
-                                    <SocialIcon colour="E60023">
-                                        <PinterestIcon />
-                                    </SocialIcon>
-                                </SocialList>
-                            </SocialContainer>
-                        </Left>
-                        <Center>
-                            <Title>Site Map</Title>
-                            <List>
-                                <ListItem>Home</ListItem>
-                                <ListItem>Cart</ListItem>
-                                <ListItem>Men</ListItem>
-                                <ListItem>Women</ListItem>
-                                <ListItem>Accessories</ListItem>
-                                <ListItem>My Account</ListItem>
-                                <ListItem>Order Tracking</ListItem>
-                                <ListItem>Wishlist</ListItem>
-                                <ListItem>Careers</ListItem>
-                                <ListItem>Terms</ListItem>
-                            </List>
-                        </Center>
-                        <Right>
-                            <Title>Contact</Title>
-                            <ContactList>
-                                <ContactItem><PlaceIcon/> <p>622 Dixie Path, South Tobinchester, 98336</p></ContactItem>
-                                <ContactItem>
-                                    <PhoneIcon /> 
-                                    <p>+1 234 56 78</p>
-                                </ContactItem>
-                                <ContactItem>
-                                    <MailOutlineIcon /> 
-                                    <p>contact@summer.co</p>
-                                </ContactItem>
-                            </ContactList>
-                            <Payment src="https://i.ibb.co/Qfvn4z6/payment.png" alt="accepted payment options: MasterCard, Paypal, American Express, Visa, Discover"/>
-                        </Right>
-                    </NavigationMenu>
-                </Wrapper>
-            </Container>
-        </>
+      <>
+        <Container>
+          <Wrapper>
+            <NavigationMenu>
+              <Left>
+                <LogoContainer>
+                  <Logo>Canada Hardware</Logo>
+                </LogoContainer>
+                <Description>
+                  Each item on this website is guaranteed in accordance with the
+                  terms of any specific manufacturer's warranty. Retain all
+                  written warranties and your original receipt in case of future
+                  adjustment. Many of the products on this website are covered
+                  by our One Year Warranty Exchange program.
+                </Description>
+                <SocialContainer>
+                  <SocialList>
+                    <SocialIcon colour="385999">
+                      <FacebookIcon />
+                    </SocialIcon>
+                    <SocialIcon colour="E4405F">
+                      <InstagramIcon />
+                    </SocialIcon>
+                    <SocialIcon colour="55ACEE">
+                      <TwitterIcon />
+                    </SocialIcon>
+                    <SocialIcon colour="E60023">
+                      <PinterestIcon />
+                    </SocialIcon>
+                  </SocialList>
+                </SocialContainer>
+              </Left>
+              <Center>
+                <Title>Site Map</Title>
+                <List>
+                  <ListItem>Home</ListItem>
+                  <ListItem>Cart</ListItem>
+                  <ListItem>Monitors</ListItem>
+                  <ListItem>Desktop Accessories</ListItem>
+                  <ListItem>GPUs</ListItem>
+                  <ListItem>My Account</ListItem>
+                  <ListItem>Order Tracking</ListItem>
+                  <ListItem>Wishlist</ListItem>
+                  <ListItem>Careers</ListItem>
+                  <ListItem>Terms</ListItem>
+                </List>
+              </Center>
+              <Right>
+                <Title>Contact</Title>
+                <ContactList>
+                  <ContactItem>
+                    <PlaceIcon />{" "}
+                    <p>5151 Yonge Street, Toronto, ON M1K 6P3</p>
+                  </ContactItem>
+                  <ContactItem>
+                    <PhoneIcon />
+                    <p>+1 234 56 78</p>
+                  </ContactItem>
+                  <ContactItem>
+                    <MailOutlineIcon />
+                    <p>slavachekhunov@gmail.com</p>
+                  </ContactItem>
+                </ContactList>
+                <Payment
+                  src="https://i.ibb.co/Qfvn4z6/payment.png"
+                  alt="accepted payment options: MasterCard, Paypal, American Express, Visa, Discover"
+                />
+              </Right>
+            </NavigationMenu>
+          </Wrapper>
+        </Container>
+      </>
     );
 };
 export default Footer;
