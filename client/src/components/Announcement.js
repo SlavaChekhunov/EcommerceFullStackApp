@@ -3,7 +3,7 @@ import SkipLink from "./SkipLink"
 
 const Container = styled.div`
     height: 3.5rem;
-    background-color: teal;
+    background-color: #CC231E;
     color: white;
     text-align: center;
     display: flex;

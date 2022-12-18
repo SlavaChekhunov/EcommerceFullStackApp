@@ -16,54 +16,54 @@ const Container = styled.div`
     padding-left: 5px;
 `;
 
-const Wrapper = styled.ul`
-    height: 100%;
-    display: flex;
-    transition: all 1.5s ease;
-    transform: translateX(${props=>props.slideIndex * -100}vw);
-    list-style: none;
+const Wrapper = styled.div`
+  height: 100%;
+  display: flex;
+  transition: all 1.5s ease;
+  transform: translateX(${(props) => props.slideIndex * -100}vw);
 `;
 
-const Slide = styled.li`
-    display: flex;
-    align-items: center;
-    width: 100vw;
-    height: 100vh;
-    background-color: #${props=>props.bg};
+const Slide = styled.div`
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background-color: #${(props) => props.bg};
 `;
 
 const ImageContainer = styled.div`
-    height: 100%;
-    flex: 1;
-    padding-left: 20px;
+  height: 100%;
+  flex: 1;
+  padding: 125px 0 0 60px;
 `;
 
 const Image = styled.img`
-    height: 80%;
+  height: 80%;
 `;
 
 const InfoContainer = styled.div`
-    flex: 1;
-    padding: 50px;
+  flex: 1;
+  padding: 50px;
 `;
 
 const Title = styled.h1`
-    font-size: 70px;
+  font-size: 70px;
 `;
 
 const Description = styled.p`
-    margin: 50px 0px;
-    font-size: 20px;
-    font-weight: 500;
-    letter-spacing; 3px;
+  margin: 50px 0px;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 3px;
 `;
 
 const Button = styled.button`
-    padding: 10px;
-    font-size: 20px;
-    background-color: transparent;
-    cursor: pointer;
+  padding: 10px;
+  font-size: 20px;
+  background-color: transparent;
+  cursor: pointer;
 `;
+
 
   const Arrow = styled.div`
   cursor: pointer;
