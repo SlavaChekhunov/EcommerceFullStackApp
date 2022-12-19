@@ -39,13 +39,13 @@ const Container = styled.li`
   }
 `;
 
-const Circle = styled.div`
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  background-color: black;
-  position: absolute;
-`;
+// const Circle = styled.div`
+//   width: 200px;
+//   height: 200px;
+//   border-radius: 50%;
+//   background-color: black;
+//   position: absolute;
+// `;
 
 const Image = styled.img`
   height: 75%;
