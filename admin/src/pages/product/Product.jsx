@@ -95,7 +95,7 @@ export default function Product() {
                 </div>
                 <div className="productInfoItem">
                   <span className="productInfoKey">in stock:</span>
-                  <span className="productInfoValue">{product.inStock}</span>
+                  <span className="productInfoValue">{product.inStock.toString()}</span>
                 </div>
               </div>
             </div>
