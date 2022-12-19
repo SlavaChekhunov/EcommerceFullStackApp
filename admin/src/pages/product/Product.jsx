@@ -74,7 +74,7 @@ export default function Product() {
           <div className="productTop">
             <div className="productTopLeft">
               <Chart
-                data={productData}
+                data={productStats}
                 dataKey="Sales"
                 title="Sales Performance"
               />
@@ -93,7 +93,6 @@ export default function Product() {
                   <span className="productInfoKey">sales:</span>
                   <span className="productInfoValue">5123</span>
                 </div>
-
                 <div className="productInfoItem">
                   <span className="productInfoKey">in stock:</span>
                   <span className="productInfoValue">{product.inStock}</span>
