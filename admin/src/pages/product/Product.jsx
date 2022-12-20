@@ -1,21 +1,37 @@
 import { Link, useLocation } from "react-router-dom";
 import "./product.css";
 import Chart from "../../components/chart/Chart";
-import { productData } from "../../dummyData";
 import { Publish } from "@material-ui/icons";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useMemo, useState } from "react";
 import { userRequest } from "../../requestMethod";
 import Topbar from "../../components/topbar/Topbar";
 import Sidebar from "../../components/sidebar/Sidebar";
+import {
+  getStorage,
+  ref,
+  uploadBytesResumable,
+  getDownloadURL,
+} from "firebase/storage";
+import app from "../../firebase";
+import { updateProduct } from "../../redux/apiCalls";
 
 export default function Product() {
   const location = useLocation();
+  const dispatch = useDispatch();
   const productId = location.pathname.split("/")[2];
   const [productStats, setProductStats] = useState([]);
 
+
+  //this captures all the title, desc, price etc.
+  const [inputs, setInputs] = useState({});
+  //this is for the new image upload
+  const [file, setFile] = useState(null);
+
+  
+  
   const product = useSelector((state) =>
-    state.product.products.find((product) => product._id === productId)
+  state.product.products.find((product) => product._id === productId)
   );
 
   //useMemo doesnt mutate our state, months in this case
@@ -35,16 +51,16 @@ export default function Product() {
       "Dec",
     ],
     []
-  );
-
-  useEffect(() => {
-    const getStats = async () => {
-      try {
-        const res = await userRequest.get("orders/income?pid=" + productId);
+    );
+    
+    useEffect(() => {
+      const getStats = async () => {
+        try {
+          const res = await userRequest.get("orders/income?pid=" + productId);
         const list = res.data.sort((a, b) => {
             return a._id - b._id;
-        })
-        list.map((item) => {
+          })
+          list.map((item) => {
           setProductStats((prev) => [
             ...prev,
             { name: MONTHS[item._id - 1], Sales: item.total },
@@ -57,7 +73,58 @@ export default function Product() {
     getStats();
   }, [productId, MONTHS]);
 
-  console.log(productStats)
+  const handleChange = (e) => {
+    //take the previous input and return a new one based on the name given
+    setInputs(prev=> {
+      return {...prev, [e.target.name]:e.target.value }
+    })
+  };
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    //upload file and update the apiCall
+    //how do I update the image inside my storage rather than uploading a new one?
+    //fileName just gives a unique name, that doesnt override the previous file even if it has the same name.
+    const fileName = new Date().getTime() + file.name;
+
+    const storage = getStorage(app);
+    const storageRef = ref(storage, fileName);
+
+    const uploadTask = uploadBytesResumable(storageRef, file);
+
+    uploadTask.on(
+      "state_changed",
+      (snapshot) => {
+        // Observe state change events such as progress, pause, and resume
+        // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
+        const progress =
+          (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        console.log("Upload is " + progress + "% done");
+        switch (snapshot.state) {
+          case "paused":
+            console.log("Upload is paused");
+            break;
+          case "running":
+            console.log("Upload is running");
+            break;
+            default:
+        }
+      },
+      (error) => {
+        console.log(error)
+      },
+      () => {
+        // Handle successful uploads on complete
+        // For instance, get the download URL: https://firebasestorage.googleapis.com/...
+        getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+          const updatedProduct = {...inputs, img: downloadURL};
+          updateProduct(productId, dispatch, updatedProduct )
+        });
+      }
+    );
+
+  }
+
 
   return (
     <>
@@ -95,7 +162,9 @@ export default function Product() {
                 </div>
                 <div className="productInfoItem">
                   <span className="productInfoKey">in stock:</span>
-                  <span className="productInfoValue">{product.inStock.toString()}</span>
+                  <span className="productInfoValue">
+                    {product.inStock.toString()}
+                  </span>
                 </div>
               </div>
             </div>
@@ -104,13 +173,28 @@ export default function Product() {
             <form className="productForm">
               <div className="productFormLeft">
                 <label>Product Name</label>
-                <input type="text" placeholder={product.title} />
+                <input
+                  type="text"
+                  name="title"
+                  placeholder={product.title}
+                  onChange={handleChange}
+                />
                 <label>Product Description</label>
-                <input type="text" placeholder={product.description} />
+                <input
+                  type="text"
+                  name="description"
+                  placeholder={product.description}
+                  onChange={handleChange}
+                />
                 <label>Price</label>
-                <input type="text" placeholder={product.price} />
+                <input
+                  type="number"
+                  name="price"
+                  placeholder={product.price}
+                  onChange={handleChange}
+                />
                 <label>In Stock</label>
-                <select name="inStock" id="idStock">
+                <select name="inStock" id="idStock" onChange={handleChange}>
                   <option value="yes">Yes</option>
                   <option value="no">No</option>
                 </select>
@@ -125,9 +209,14 @@ export default function Product() {
                   <label for="file">
                     <Publish />
                   </label>
-                  <input type="file" id="file" style={{ display: "none" }} />
+                  <input
+                    type="file"
+                    id="file"
+                    style={{ display: "none" }}
+                    onChange={e=>setFile(e.target.files[0])}
+                  />
                 </div>
-                <button className="productButton">Update</button>
+                <button className="productButton" onClick={handleClick}>Update</button>
               </div>
             </form>
           </div>

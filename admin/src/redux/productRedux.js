@@ -45,11 +45,12 @@ const productSlice = createSlice({
     updateProductSuccess: (state, action) => {
       state.isFetching = false;
       state.products[
-      state.products.findIndex((item) => item._id === action.payload.id)] = action.payload.product;
+        state.products.findIndex((item) => item._id === action.payload.id)
+      ] = action.payload.product;
     },
     updateProductFailure: (state) => {
       state.isFetching = false;
-      state.products = true;
+      state.error = true;
     },
     //ADD PRODUCT
     addProductStart: (state) => {
@@ -58,7 +59,7 @@ const productSlice = createSlice({
     },
     addProductSuccess: (state, action) => {
       state.isFetching = false;
-      state.products.push(action.payload)
+      state.products.push(action.payload);
     },
     addProductFailure: (state) => {
       state.isFetching = false;
