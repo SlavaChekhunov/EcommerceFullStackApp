@@ -21,15 +21,13 @@ export default function Product() {
   const dispatch = useDispatch();
   const productId = location.pathname.split("/")[2];
   const [productStats, setProductStats] = useState([]);
-
+  const [category, setCategory] = useState([]);
 
   //this captures all the title, desc, price etc.
   const [inputs, setInputs] = useState({});
   //this is for the new image upload
   const [file, setFile] = useState(null);
 
-  
-  
   const product = useSelector((state) =>
   state.product.products.find((product) => product._id === productId)
   );
@@ -80,6 +78,10 @@ export default function Product() {
     })
   };
 
+  const handleCategories = async (e) => {
+    setCategory(e.target.value.split(","));
+  };
+
   const handleClick = (e) => {
     e.preventDefault();
     //upload file and update the apiCall
@@ -117,8 +119,14 @@ export default function Product() {
         // Handle successful uploads on complete
         // For instance, get the download URL: https://firebasestorage.googleapis.com/...
         getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-          const updatedProduct = {...inputs, img: downloadURL};
-          updateProduct(productId, dispatch, updatedProduct )
+          console.log(downloadURL)
+          const updatedProduct = {
+            ...inputs,
+            image: downloadURL,
+            categories: category,
+          };
+          console.log(updatedProduct)
+          updateProduct(productId, updatedProduct, dispatch)
         });
       }
     );
@@ -148,13 +156,13 @@ export default function Product() {
             </div>
             <div className="productTopRight">
               <div className="productInfoTop">
-                <img src={product.image} alt="" className="productInfoImg" />
-                <span className="productName">{product.title}</span>
+                <img src={product?.image} alt="" className="productInfoImg" />
+                <span className="productName">{product?.title}</span>
               </div>
               <div className="productInfoBottom">
                 <div className="productInfoItem">
                   <span className="productInfoKey">id:</span>
-                  <span className="productInfoValue">{product._id}</span>
+                  <span className="productInfoValue">{product?._id}</span>
                 </div>
                 <div className="productInfoItem">
                   <span className="productInfoKey">sales:</span>
@@ -163,7 +171,7 @@ export default function Product() {
                 <div className="productInfoItem">
                   <span className="productInfoKey">in stock:</span>
                   <span className="productInfoValue">
-                    {product.inStock.toString()}
+                    {product?.inStock.toString()}
                   </span>
                 </div>
               </div>
@@ -176,21 +184,28 @@ export default function Product() {
                 <input
                   type="text"
                   name="title"
-                  placeholder={product.title}
+                  placeholder={product?.title}
                   onChange={handleChange}
                 />
                 <label>Product Description</label>
                 <input
                   type="text"
                   name="description"
-                  placeholder={product.description}
+                  placeholder={product?.description}
                   onChange={handleChange}
+                />
+                <label>Product Categories</label>
+                <input
+                  type="text"
+                  name="category"
+                  placeholder={product?.categories}
+                  onChange={handleCategories}
                 />
                 <label>Price</label>
                 <input
                   type="number"
                   name="price"
-                  placeholder={product.price}
+                  placeholder={product?.price}
                   onChange={handleChange}
                 />
                 <label>In Stock</label>
@@ -202,7 +217,7 @@ export default function Product() {
               <div className="productFormRight">
                 <div className="productUpload">
                   <img
-                    src={product.image}
+                    src={product?.image}
                     alt=""
                     className="productUploadImg"
                   />

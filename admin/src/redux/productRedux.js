@@ -44,6 +44,7 @@ const productSlice = createSlice({
     },
     updateProductSuccess: (state, action) => {
       state.isFetching = false;
+      //[1,2,3,4][2] = 10 => finds the index of 2 and changes it to 10 instead of "3" in this case
       state.products[
         state.products.findIndex((item) => item._id === action.payload.id)
       ] = action.payload.product;

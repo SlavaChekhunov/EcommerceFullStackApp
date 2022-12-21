@@ -1,4 +1,4 @@
-import { loginStart, loginFailure, loginSuccess } from "./userRedux";
+import { loginStart, loginFailure, loginSuccess, logout } from "./userRedux";
 import { publicRequest, userRequest } from "../requestMethod";
 import {
   addProductFailure,
