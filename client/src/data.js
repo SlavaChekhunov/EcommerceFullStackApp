@@ -2,6 +2,7 @@ export const sliderItems = [
   {
     id: 0,
     img: "https://images10.newegg.com/BizIntell/item/24/012/24-012-040/features-layout-1_062520.png",
+    // img: "https://cdn.discordapp.com/attachments/1008567356341092453/1058175785246142465/Slava_Chekhunov_Picture_of_nvidia_graphics_card_rtx_3080_evga_b_42d8cd73-73a1-4103-b8d4-aa830a0394f4.png",
     alt: "A gaming monitor on display",
     title: "Christmas Sale",
     description:

@@ -125,7 +125,6 @@ export default function Product() {
             image: downloadURL,
             categories: category,
           };
-          console.log(updatedProduct)
           updateProduct(productId, updatedProduct, dispatch)
         });
       }

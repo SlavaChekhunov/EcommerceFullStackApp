@@ -19,27 +19,42 @@ const userSlice = createSlice({
       state.isFetching = false;
       state.error = true;
     },
-    logout: (state) => {
-      state.currentUser = null;
-    },
-    //UPDATE USER
-    updateUserStart: (state) => {
+    //GET USERS
+    getUserStart: (state) => {
       state.isFetching = true;
       state.error = false;
     },
-    updateUserSuccess: (state, action) => {
+    getUserSuccess: (state, action) => {
       state.isFetching = false;
-      //[1,2,3,4][2] = 10 => finds the index of 2 and changes it to 10 instead of "3" in this case
-      state.products[
-        state.products.findIndex((item) => item._id === action.payload.id)
-      ] = action.payload.user;
+      state.currentUser = action.payload;
     },
-    updateUserFailure: (state) => {
+    getUserFailure: (state) => {
       state.isFetching = false;
-      state.error = true;
+      state.currentUser = true;
+    },
+    logout: (state) => {
+      state.currentUser = null;
+    },
+
+    //DELETE USERS
+    deleteUserStart: (state) => {
+      state.isFetching = true;
+      state.error = false;
+    },
+
+    deleteUserSuccess: (state, action) => {
+      state.isFetching = false;
+      state.user.splice(
+        state.currentUser.findIndex((item) => item._id === action.payload),
+        1
+      );
+    },
+    deleteUserFailure: (state) => {
+      state.isFetching = false;
+      state.currentUser = true;
     },
   },
 });
 
-export const { loginStart, loginSuccess, loginFailure, logout } = userSlice.actions;
+export const { loginStart, loginSuccess, loginFailure, logout, getUserFailure, getUserSuccess, getUserStart, deleteUserFailure, deleteUserStart, deleteUserSuccess } = userSlice.actions;
 export default userSlice.reducer;
