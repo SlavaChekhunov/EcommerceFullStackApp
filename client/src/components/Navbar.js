@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import Search from '@mui/icons-material/Search';
+import { santaHat } from '../data';
 import { Badge } from '@mui/material';
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import { useSelector } from "react-redux";
@@ -63,6 +64,15 @@ text-decoration: none;
 `;
 
 
+const Image = styled.img`
+height: auto;
+width: auto;
+max-width: 100px;
+max-height: 100px;
+padding-right: 100px;
+`;
+
+
 const Navbar = () => {
   const quantity = useSelector(state=> state.cart.quantity);
   const navigate = useNavigate();
@@ -77,6 +87,9 @@ const Navbar = () => {
       <Wrapper>
         <NavigationMenu>
           <Left>
+            {santaHat.map((item) => (
+                  <Image src={item.img} alt={item.alt} />
+            ))}
             <Language>EN</Language>
             <SearchContainer>
               <Input />

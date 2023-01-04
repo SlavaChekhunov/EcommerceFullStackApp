@@ -51,3 +51,15 @@ export const categories = [
     cat: "CPU",
   },
 ];
+
+export const santaHat = [
+  {
+    id: 0,
+    img: "https://m.media-amazon.com/images/I/51Gb8GLccNL._AC_UX679_.jpg",
+    // img: "https://cdn.discordapp.com/attachments/1008567356341092453/1058175785246142465/Slava_Chekhunov_Picture_of_nvidia_graphics_card_rtx_3080_evga_b_42d8cd73-73a1-4103-b8d4-aa830a0394f4.png",
+    alt: "A gaming monitor on display",
+    title: "Christmas Sale",
+    description:
+      "Best 1440p 240hz displays on the market. GIGABYTE M27Q-PRO 27 inch Gaming Monitor 30% off!"
+  },
+];

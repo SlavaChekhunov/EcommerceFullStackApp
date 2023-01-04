@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { useNavigate } from "react-router";
 
 const Container = styled.div`
   width: 100vw;
@@ -53,6 +54,11 @@ const Button = styled.button`
 `;
 
 const Register = () => {
+  const navigate = useNavigate();
+
+  const handleRegister = () => {
+    navigate("/");
+  }
   return (
     <Container>
       <Wrapper>
@@ -68,7 +74,7 @@ const Register = () => {
             By creating an account, I consent to the processing of my personal
             data in accordance with the <b>PRIVACY POLICY</b>
           </Agreement>
-          <Button>CREATE</Button>
+          <Button onClick={handleRegister}>CREATE</Button>
         </Form>
       </Wrapper>
     </Container>
