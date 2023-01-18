@@ -1,3 +1,4 @@
+import React from "react";
 import styled from "styled-components";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import SearchIcon from "@mui/icons-material/Search";

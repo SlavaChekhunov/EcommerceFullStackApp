@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import ArrowLeftOutlinedIcon from "@mui/icons-material/ArrowLeftOutlined";
 import ArrowRightOutlinedIcon from "@mui/icons-material/ArrowRightOutlined";
-import { useState } from "react";
+import { React, useState } from "react";
 import { sliderItems } from "../data"
 
 //check out props for styled components that allow you to separate different arrows. direction is a prop, left or right.

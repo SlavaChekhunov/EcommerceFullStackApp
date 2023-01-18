@@ -1,3 +1,4 @@
+import React from "react";
 import styled from 'styled-components';
 import Search from '@mui/icons-material/Search';
 import { santaHat } from '../data';

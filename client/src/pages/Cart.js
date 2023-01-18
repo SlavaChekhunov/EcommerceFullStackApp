@@ -1,3 +1,4 @@
+import { React, useState, useEffect } from "react";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import styled from "styled-components";
@@ -6,8 +7,6 @@ import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import { useSelector } from "react-redux";
 import StripeCheckout from "react-stripe-checkout";
-import { useState } from "react";
-import { useEffect } from "react";
 import { userRequest } from "../requestMethod";
 import { useNavigate } from "react-router-dom";
 

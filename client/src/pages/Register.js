@@ -1,8 +1,8 @@
+import { React, useState } from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router";
 import { register } from "../redux/apiCalls";
 import { useDispatch, useSelector } from "react-redux";
-import { useState } from "react";
 
 const Container = styled.div`
   width: 100vw;

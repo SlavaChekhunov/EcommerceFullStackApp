@@ -1,3 +1,4 @@
+import React from "react";
 import styled from "styled-components";
 import Announcement from "../components/Announcement";
 import AddIcon from "@mui/icons-material/Add";
@@ -165,7 +166,7 @@ const Product = () => {
           <Price>$ {product.price}</Price>
           <FilterContainer>
             <Filter>
-              <FilterTitle>Color</FilterTitle>
+              <FilterTitle>Colour</FilterTitle>
               {product.color?.map((c) => (
                 <FilterColor color={c} key={c} onClick={()=>setColor(c)}/>
               ))}
