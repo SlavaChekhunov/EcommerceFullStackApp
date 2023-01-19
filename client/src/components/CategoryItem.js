@@ -23,12 +23,18 @@ const Info = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgba(1, 1, 1, 0.25);
+    background-color: rgba(1, 1, 1, 0.5);
+
+    &:hover {
+        background-color: rgba(1, 1, 1, 0.2);
+        transition: 0.5s all ease-out;
+    }
 `;
 const Title = styled.h3`
     color: white;
     margin-bottom: 20px;
     font-size: 2rem;
+    text-align: center;
 `;
 const Button = styled.button`
     border: none;

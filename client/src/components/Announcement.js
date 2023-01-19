@@ -4,7 +4,7 @@ import SkipLink from "./SkipLink"
 
 const Container = styled.div`
     height: 3.5rem;
-    background-color: #CC231E;
+    background-color: #d80621;
     color: white;
     text-align: center;
     display: flex;

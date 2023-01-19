@@ -47,6 +47,7 @@ text-align: center;
 `
 const Logo = styled.h1`
 font-weight: bold;
+color: #d80621;
 `
 const Right = styled.div`
 flex: 1;
@@ -59,8 +60,8 @@ font-size: 1.25rem;
 cursor: pointer;
 flex: 1;
 display: flex;
-justify-content: flex-end;
-padding: 0 50px 0 50px;
+justify-content: center;
+padding: 0 25px;
 text-decoration: none;
 `;
 

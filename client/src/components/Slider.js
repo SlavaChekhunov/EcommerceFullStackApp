@@ -46,7 +46,7 @@ const InfoContainer = styled.div`
   padding: 50px;
 `;
 
-const Title = styled.h1`
+const Title = styled.h2`
   font-size: 70px;
 `;
 
