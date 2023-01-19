@@ -158,7 +158,7 @@ const Footer = () => {
                   </ContactItem>
                   <ContactItem>
                     <PhoneIcon />
-                    <p>+1 234 56 78</p>
+                    <p>+1 416 555 5555</p>
                   </ContactItem>
                   <ContactItem>
                     <MailOutlineIcon />

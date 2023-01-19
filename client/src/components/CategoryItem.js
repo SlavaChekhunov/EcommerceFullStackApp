@@ -1,12 +1,14 @@
 import styled from "styled-components";
 import React from "react"
 import { Link } from "react-router-dom";
+import { mobile, tablet, smallDesktop } from "../responsive"
 
 const Container = styled.li`
     flex: 1;
     margin: 3px;
     min-height: 70vh;
     position: relative;
+    ${mobile({ minHeight: "25vh"})}
 `;
 const Image = styled.img`
     max-width: 100%;
@@ -23,18 +25,23 @@ const Info = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgba(1, 1, 1, 0.5);
+    background-color: rgba(1, 1, 1, 0.4);
 
     &:hover {
         background-color: rgba(1, 1, 1, 0.2);
         transition: 0.5s all ease-out;
     }
+
 `;
 const Title = styled.h3`
     color: white;
     margin-bottom: 20px;
     font-size: 2rem;
     text-align: center;
+    ${mobile({ 
+        fontSize: "1.25rem",
+        maxWidth: "200px"
+    })}
 `;
 const Button = styled.button`
     border: none;
@@ -44,6 +51,7 @@ const Button = styled.button`
     cursor: pointer;
     font-weight: 600;
     font-size: 1.4rem;
+    ${mobile({ fontSize: "1rem"})}
 `;
 
 const CategoryItem = ({item}) => {

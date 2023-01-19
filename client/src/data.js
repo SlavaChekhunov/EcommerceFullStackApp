@@ -50,7 +50,7 @@ export const categories = [
     id: 2,
     img: "https://static.techspot.com/articles-info/2567/images/2022-11-16-image-2.jpg",
     title: "CPUS FASTER THAN SANTA'S SLEIGH",
-    alt: "Lego Spider-Pig from Into the Spider-Verse drives a Spider-Man themed car with an AMD CPU in it",
+    alt: "Lego Spider-Pig from Into the Spider-Verse drives a Spider-Man themed Lego car with an AMD CPU in it",
     cat: "CPU",
   },
 ];
@@ -59,6 +59,6 @@ export const santaHat = [
   {
     id: 0,
     img: santaHatImg,
-    alt: "Canada Hardware logo with santa hat on top"
+    alt: "Canada Hardware logo with a Santa hat on it"
   },
 ];
