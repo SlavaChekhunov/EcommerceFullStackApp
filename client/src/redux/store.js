@@ -23,6 +23,13 @@ const rootReducer = combineReducers({user: userReducer, cart: cartReducer});
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
+export const setupStore = (preloadedState) => {
+  return configureStore({
+    reducer: rootReducer,
+    preloadedState,
+  });
+};
+
 export const store = configureStore({
   reducer: persistedReducer,
   middleware: (getDefaultMiddleware) =>

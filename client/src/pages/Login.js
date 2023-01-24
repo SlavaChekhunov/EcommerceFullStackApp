@@ -1,7 +1,7 @@
 import { React, useState } from "react";
 import styled from "styled-components";
 import { login } from "../redux/apiCalls";
-import { useDispatch, useSelector } from "react-redux";
+import { useAppDispatch, useAppSelector } from "../hooks";
 import { useNavigate } from "react-router-dom";
 
 const Container = styled.div`
@@ -51,7 +51,7 @@ const Button = styled.button`
   cursor: pointer;
   margin-bottom: 10px;
   &:disabled {
-    color: green;
+    color: white;
     cursor: not-allowed;
   }
 `;
@@ -70,10 +70,11 @@ const Error = styled.span`
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const dispatch = useDispatch();
+  const [loading, setLoading] = useState(false);
+  const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
-  const {isFetching, error} = useSelector(state=>state.user)
+  const { error } = useAppSelector((state) => state.user);
 
 
   const handleClick = (e) => {
@@ -96,8 +97,8 @@ const Login = () => {
             type="password"
             onChange={(e) => setPassword(e.target.value)}
           />
-          <Button onClick={handleClick} disabled={isFetching}>LOGIN</Button>
-          {error && <Error>Something went wrong. Please try again.</Error>}
+          <Button onClick={handleClick} disabled={!username || !password}>{loading ? "Loading..." : "LOGIN"}</Button>
+          {error && <Error data-testid="error">Something went wrong. Please try again.</Error>}
           <Link>DO NOT YOU REMEMBER THE PASSWORD?</Link>
           <Link>CREATE A NEW ACCOUNT</Link>
         </Form>
