@@ -2,7 +2,7 @@ import { Button, TextField } from "@mui/material";
 import SendIcon from '@mui/icons-material/Send';
 import React from "react";
 import styled from "styled-components"
-import { mobile, tablet, smallDesktop } from "../responsive"
+import { mobile } from "../responsive"
 
 const Container = styled.section`
     min-height: 350px;
@@ -17,6 +17,9 @@ const Wrapper = styled.div`
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    ${mobile({
+        width: "95%"
+    })}
 `
 
 const Title = styled.h2`

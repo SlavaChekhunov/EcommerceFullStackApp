@@ -8,7 +8,11 @@ const Container = styled.li`
     margin: 3px;
     min-height: 70vh;
     position: relative;
-    ${mobile({ minHeight: "25vh"})}
+    ${mobile({ 
+        minHeight: "25vh",
+        width: "100%",
+        margin: "3px auto"
+    })}
 `;
 const Image = styled.img`
     max-width: 100%;

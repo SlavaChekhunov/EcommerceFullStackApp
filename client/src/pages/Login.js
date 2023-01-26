@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { login } from "../redux/apiCalls";
 import { useAppDispatch, useAppSelector } from "../hooks";
 import { useNavigate } from "react-router-dom";
+import {mobile} from "../responsive"
 
 const Container = styled.div`
   width: 100vw;
@@ -23,6 +24,9 @@ const Wrapper = styled.div`
   width: 25%;
   padding: 20px;
   background-color: white;
+  ${mobile({
+    width: "85%"
+  })}
 `;
 
 const Title = styled.h1`

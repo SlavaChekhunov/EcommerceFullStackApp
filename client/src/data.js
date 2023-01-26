@@ -27,7 +27,7 @@ export const sliderItems = [
     alt: "EDVGA XC3 Ultra GeForce RTX 3090 GPU",
     title: "GPUs finally in stock",
     description: "GREAT VALUE FOR LAST GEN OF GPUS GOING UNDER MRSP!",
-    bg: "faefef",
+    bg: "e2fee2",
   },
 ];
 

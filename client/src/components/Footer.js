@@ -7,6 +7,7 @@ import PinterestIcon from '@mui/icons-material/Pinterest';
 import PlaceIcon from '@mui/icons-material/Place';
 import PhoneIcon from '@mui/icons-material/Phone';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
+import { mobile } from '../responsive'
 
 const Container = styled.footer`
 `
@@ -14,10 +15,16 @@ const Wrapper = styled.div`
     width: 90%;
     max-width: 1400px;
     margin: 0 auto;
+    ${mobile({
+      width: "95%"
+    })}
 `
 const NavigationMenu = styled.nav`
     display: flex;
     justify-content: space-between;
+    ${mobile({
+      flexDirection: "column"
+    })}
 `
 const Left = styled.ul`
     flex: 1;
@@ -29,10 +36,22 @@ const Left = styled.ul`
 const Center = styled.ul`
     flex: 1;
     padding: 20px;
-`
+    ${mobile({
+    position: "absolute",
+    width: "1px",
+    height: "1px",
+    margin: "-1px", 
+    border: "0",
+    padding: "0",
+    whiteSpace: "nowrap",
+    clipPath: "inset(100%)",
+    clip: "rect(0 0 0 0)", 
+    overflow: "hidden"
+  })}
+`;
 const Title = styled.h3`
     margin-bottom: 1.5rem;
-`
+`;
 const List = styled.ul`
     margin: 0;
     padding: 0;
@@ -43,21 +62,21 @@ const List = styled.ul`
 const ListItem = styled.li`
     flex-basis: 49%;
     margin-bottom: 10px;
-`
+`;
 
 const Right = styled.ul`
     flex: 1;
     padding: 20px;
-`
+`;
 const LogoContainer = styled.li``
 
 const Logo = styled.h2`
     text-transform: uppercase;
-`
+`;
 
 const Description = styled.li`
     margin: 1.25rem 0;
-`
+`;
 
 const SocialContainer = styled.li`
     display: flex;

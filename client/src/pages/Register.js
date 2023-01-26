@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { useNavigate } from "react-router";
 import { register } from "../redux/apiCalls";
 import { useDispatch, useSelector } from "react-redux";
+import { mobile } from "../responsive"
 
 const Container = styled.div`
   width: 100vw;
@@ -23,6 +24,9 @@ const Wrapper = styled.div`
   width: 40%;
   padding: 20px;
   background-color: white;
+  ${mobile({
+    width: "85%"
+  })}
 `;
 
 const Title = styled.h1`
@@ -61,10 +65,10 @@ const Error = styled.span`
 `;
 
 const Register = () => {
-   const [username, setUsername] = useState("");
-   const [email, setEmail] = useState("");
-   const [password, setPassword] = useState("");
-   const dispatch = useDispatch();
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const { isFetching, error } = useSelector((state) => state.user);
