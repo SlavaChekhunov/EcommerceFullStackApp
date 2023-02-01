@@ -37,18 +37,38 @@ const Left = styled.div`
   display: flex;
   flex: 1;
   align-items: center;
+  justify-content: space-between;
   ${mobile({ 
     justifyContent: "flex-start",
+
   })}
 `;
-const SearchForm = styled.form`
-  margin: 0;
-  padding: 0;
+
+const Logo = styled.img`
+  max-width: 30%;
+  height: auto;
+  flex-basis: 34%;
+  margin: 5px 0;
+  ${mobile({ 
+    position: "absolute", 
+    width: "1px",
+    height: "1px",
+    margin: "-1px",
+    border: "0",
+    padding: "0",
+    clipPath: "inset(100%)",
+    clip: "rect(0 0 0 0)",
+    overflow: "hidden",
+  })}
 `;
 
 const Language = styled.span`
   font-size: 14px;
   cursor: pointer;
+  flex-basis: 9%;
+  text-align: center;
+  margin: 0 auto;
+  padding: 0 10px;
   ${mobile({ 
     position: "absolute", 
     width: "1px",
@@ -63,25 +83,33 @@ const Language = styled.span`
   }
 `;
 
-const SearchContainer = styled.div`
-  border: 0.5px solid lightgrey;
-  display: flex;
-  align-items: center;
-  margin-left: 25px;
-  padding: 5px;
-  ${mobile({
-    margin: "0",
-    padding: "5 0",
-    justifyContent: "flex-start"
-  })}
+const SearchForm = styled.form`
+  margin: 0;
+  padding: 0;
+  flex-basis: 34%;
 `;
 
 const Input = styled.input`
   border: none;
-  outline-width: 0;
+  outline: none;
+
   ${mobile({ 
-    maxWidth: "75px",
     fontSize: "0.9rem"
+  })}
+`;
+
+const SearchContainer = styled.div`
+  border: 0.5px solid lightgrey;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  max-width: calc(100% - 10px);
+
+  ${mobile({
+    margin: "0",
+    padding: "5 0",
+    justifyContent: "flex-start"
   })}
 `;
 
@@ -101,6 +129,7 @@ const SearchLabel = styled.label`
 const Center = styled.div`
   flex: 1;
   text-align: center;
+  align-content: center;
   display: flex;
   justify-content: center;
   ${mobile({ justifyContent: "flex-end" })}
@@ -121,8 +150,7 @@ const Right = styled.div`
   flex: 1;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  margin: 0 10px;
+  justify-content: space-between;
   ${mobile({
     justifyContent: "center",
     marginTop: "10px",
@@ -132,33 +160,18 @@ const Right = styled.div`
 const MenuItem = styled.div`
   font-size: 1.25rem;
   cursor: pointer;
-  flex: 1;
   display: flex;
-  justify-content: center;
-  padding: 0 25px;
+  flex-basis: 32%;
+  align-content: center;
+  padding: 0;
   text-decoration: none;
+  
+  &:last-child {
+    justify-content: flex-end;
+  }
   ${mobile({ 
     fontSize: "1rem",
-    justifyContent: "flex-start",
-    padding: "0",
     minWidth: "60px"
-  })}
-`;
-
-const Logo = styled.img`
-  max-width: 50%;
-  height: auto;
-  padding-right: 100px;
-  ${mobile({ 
-    position: "absolute", 
-    width: "1px",
-    height: "1px",
-    margin: "-1px",
-    border: "0",
-    padding: "0",
-    "clip-path": "inset(100%)",
-    clip: "rect(0 0 0 0)",
-    overflow: "hidden",
   })}
 `;
 

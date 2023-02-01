@@ -1,4 +1,4 @@
-import santaHatImg from './assets/canada-hardware-logo-santa-hat.webp'; 
+import santaHatImg from './assets/canada-hardware-logo-santa-hat.svg'; 
 import gpuImg from './assets/evga-3090.webp';
 import cpuImg from './assets/ryzen-zen-4.webp';
 

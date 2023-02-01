@@ -8,6 +8,7 @@ import PlaceIcon from '@mui/icons-material/Place';
 import PhoneIcon from '@mui/icons-material/Phone';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import { mobile } from '../responsive'
+import { NoEncryption } from "@mui/icons-material";
 
 const Container = styled.footer`
 `
@@ -37,17 +38,8 @@ const Center = styled.ul`
     flex: 1;
     padding: 20px;
     ${mobile({
-    position: "absolute",
-    width: "1px",
-    height: "1px",
-    margin: "-1px", 
-    border: "0",
-    padding: "0",
-    whiteSpace: "nowrap",
-    clipPath: "inset(100%)",
-    clip: "rect(0 0 0 0)", 
-    overflow: "hidden"
-  })}
+      display: "none"
+    })}
 `;
 const Title = styled.h3`
     margin-bottom: 1.5rem;
