@@ -20,7 +20,7 @@ const Wrapper = styled.div`
   ${mobile({ 
     padding: "10px 0px",
     width: "95%"
- })}
+  })}
 `;
 
 const NavigationMenu = styled.nav`
