@@ -45,7 +45,7 @@ const Left = styled.div`
 `;
 
 const Logo = styled.img`
-  max-width: 30%;
+  max-width: 20%;
   height: auto;
   flex-basis: 34%;
   margin: 5px 0;
@@ -92,14 +92,16 @@ const SearchForm = styled.form`
 const Input = styled.input`
   border: none;
   outline: none;
-
-  ${mobile({ 
-    fontSize: "0.9rem"
-  })}
+  flex-basis: calc(89% - 10px)
+  &::placeholder {
+    color: black;
+    opacity: 1;
+    webkit-opacity: 1;
+  }
 `;
 
 const SearchContainer = styled.div`
-  border: 0.5px solid lightgrey;
+  border: 0.5px solid black;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -108,7 +110,6 @@ const SearchContainer = styled.div`
 
   ${mobile({
     margin: "0",
-    padding: "5 0",
     justifyContent: "flex-start"
   })}
 `;
@@ -197,7 +198,11 @@ const Navbar = () => {
               <SearchLabel htmlFor="search">Search:</SearchLabel>
               <SearchContainer>
                 <Input id="search" placeholder="Search"/>
-                <Search style={{ color: "grey", fontSize: 16 }} />
+                <Search style={{ 
+                  color: "black", 
+                  fontSize: "1rem",
+                  flexBasis: "9%"
+                }} />
               </SearchContainer>
             </SearchForm>
           </Left>
