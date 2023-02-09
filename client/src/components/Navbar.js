@@ -40,14 +40,15 @@ const Left = styled.div`
   justify-content: space-between;
   ${mobile({ 
     justifyContent: "flex-start",
-
+    flexBasis: "49%",
+    maxWidth: "49%"
   })}
 `;
 
 const Logo = styled.img`
   max-width: 20%;
   height: auto;
-  flex-basis: 34%;
+  flex-basis: 20%;
   margin: 5px 0;
   ${mobile({ 
     position: "absolute", 
@@ -84,15 +85,25 @@ const Language = styled.span`
 `;
 
 const SearchForm = styled.form`
-  margin: 0;
   padding: 0;
-  flex-basis: 34%;
+  border: 0.5px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  flex-basis: 65%;
+  max-width: 65%;
+
+  ${mobile({
+    maxWidth: "100%"
+  })}
 `;
 
 const Input = styled.input`
   border: none;
   outline: none;
-  flex-basis: calc(89% - 10px)
+  flex-basis: 89%;
+  max-width: 89%;
   &::placeholder {
     color: black;
     opacity: 1;
@@ -100,19 +111,6 @@ const Input = styled.input`
   }
 `;
 
-const SearchContainer = styled.div`
-  border: 0.5px solid black;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 5px;
-  max-width: calc(100% - 10px);
-
-  ${mobile({
-    margin: "0",
-    justifyContent: "flex-start"
-  })}
-`;
 
 const SearchLabel = styled.label`
   position: absolute; 
@@ -133,7 +131,12 @@ const Center = styled.div`
   align-content: center;
   display: flex;
   justify-content: center;
-  ${mobile({ justifyContent: "flex-end" })}
+  padding: 0 15px;
+  ${mobile({ 
+    justifyContent: "flex-end",
+    flexBasis: "49%",
+    padding: "0"
+  })}
 `;
 
 const SiteTitle = styled.h1`
@@ -196,14 +199,12 @@ const Navbar = () => {
             <Language>EN</Language>
             <SearchForm>
               <SearchLabel htmlFor="search">Search:</SearchLabel>
-              <SearchContainer>
-                <Input id="search" placeholder="Search"/>
-                <Search style={{ 
-                  color: "black", 
-                  fontSize: "1rem",
-                  flexBasis: "9%"
-                }} />
-              </SearchContainer>
+              <Input id="search" placeholder="Search"/>
+              <Search style={{ 
+                color: "black", 
+                fontSize: "1rem",
+                flexBasis: "9%"
+              }} />
             </SearchForm>
           </Left>
           <Center>
